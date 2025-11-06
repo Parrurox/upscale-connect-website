@@ -74,4 +74,41 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
+
+  // FAQ Accordion
+  const accordion = document.getElementById("faq-accordion");
+  if (accordion) {
+    const items = accordion.querySelectorAll(".border-b");
+    items.forEach((item) => {
+      const button = item.querySelector("button");
+      const content = item.querySelector("div");
+      const icon = button.querySelector("svg");
+
+      button.addEventListener("click", () => {
+        const isExpanded =
+          content.style.maxHeight && content.style.maxHeight !== "0px";
+
+        // Close all items
+        items.forEach((i) => {
+          i.querySelector("div").style.maxHeight = "0px";
+          i.querySelector("button svg").classList.remove("rotate-180");
+        });
+
+        // Open the clicked item if it was closed
+        if (!isExpanded) {
+          content.style.maxHeight = content.scrollHeight + "px";
+          icon.classList.add("rotate-180");
+        }
+      });
+    });
+
+    // Open the first item by default
+    if (items.length > 0) {
+      const firstItem = items[0];
+      const firstContent = firstItem.querySelector("div");
+      const firstIcon = firstItem.querySelector("button svg");
+      firstContent.style.maxHeight = firstContent.scrollHeight + "px";
+      firstIcon.classList.add("rotate-180");
+    }
+  }
 });
