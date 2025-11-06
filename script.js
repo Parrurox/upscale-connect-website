@@ -111,4 +111,43 @@ document.addEventListener("DOMContentLoaded", function () {
       firstIcon.classList.add("rotate-180");
     }
   }
+
+  // Number Count-Up Animation
+  const countUpObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.target, 10);
+          const duration = 2000; // 2 seconds
+          let startTimestamp = null;
+
+          const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min(
+              (timestamp - startTimestamp) / duration,
+              1
+            );
+            const current = Math.floor(progress * target);
+            el.innerText = current;
+            if (progress < 1) {
+              window.requestAnimationFrame(step);
+            } else {
+              // Ensure final number is exact and add plus if needed
+              el.innerText =
+                target + (el.dataset.target.includes("+") ? "+" : "");
+            }
+          };
+
+          window.requestAnimationFrame(step);
+          observer.unobserve(el); // Animate only once
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  document.querySelectorAll(".count-up").forEach((el) => {
+    countUpObserver.observe(el);
+  });
 });
