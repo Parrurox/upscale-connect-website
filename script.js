@@ -1,20 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Intersection Observer for scroll animations
-  const fadeElements = document.querySelectorAll(".fade-in-section");
+  const fadeElements = document.querySelectorAll(".fade-in");
 
   const fadeObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
+          entry.target.classList.add("active");
         } else {
-          entry.target.classList.remove("is-visible");
+          entry.target.classList.remove("active");
         }
       });
     },
     {
-      threshold: 0.05, // Trigger when 15% of element is visible
-      rootMargin: "0px 0px -50px 0px", // Start animation slightly before element enters viewport
+      threshold: 0.1, // Trigger when 10% of element is visible
+      rootMargin: '50px'
     }
   );
 
@@ -75,50 +75,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // FAQ Accordion
-  const accordion = document.getElementById("faq-accordion");
-  if (accordion) {
-    const items = accordion.querySelectorAll(".border-b");
-    items.forEach((item) => {
-      const button = item.querySelector("button");
-      const content = item.querySelector("div");
-      const icon = button.querySelector("svg");
-
-      button.addEventListener("click", () => {
-        const isExpanded =
-          content.style.maxHeight && content.style.maxHeight !== "0px";
-
-        // Close all items
-        items.forEach((i) => {
-          i.querySelector("div").style.maxHeight = "0px";
-          i.querySelector("button svg").classList.remove("rotate-180");
-        });
-
-        // Open the clicked item if it was closed
-        if (!isExpanded) {
-          content.style.maxHeight = content.scrollHeight + "px";
-          icon.classList.add("rotate-180");
-        }
-      });
-    });
-
-    // Open the first item by default
-    if (items.length > 0) {
-      const firstItem = items[0];
-      const firstContent = firstItem.querySelector("div");
-      const firstIcon = firstItem.querySelector("button svg");
-      firstContent.style.maxHeight = firstContent.scrollHeight + "px";
-      firstIcon.classList.add("rotate-180");
-    }
-  }
-
   // Number Count-Up Animation
   const countUpObserver = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const el = entry.target;
-          const target = parseInt(el.dataset.target, 10);
+          const target = parseFloat(el.dataset.target);
+          const decimalData = el.dataset.target.split('.')[1];
+          const precision = decimalData ? decimalData.replace('%', '').length : 0;
           const duration = 2000; // 2 seconds
           let startTimestamp = null;
 
@@ -128,14 +93,15 @@ document.addEventListener("DOMContentLoaded", function () {
               (timestamp - startTimestamp) / duration,
               1
             );
-            const current = Math.floor(progress * target);
-            el.innerText = current;
+            const current = progress * target;
+            el.innerText = current.toFixed(precision);
+
             if (progress < 1) {
               window.requestAnimationFrame(step);
             } else {
               // Ensure final number is exact and add plus if needed
               el.innerText =
-                target + (el.dataset.target.includes("+") ? "+" : "");
+                target.toFixed(precision) + (el.dataset.target.includes("%") ? "%" : "");
             }
           };
 
