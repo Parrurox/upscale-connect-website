@@ -54,7 +54,7 @@
     </div>
   </header>
 
-  <main>
+  <main class="w-full overflow-hidden">
     <!-- Hero Section -->
     <section class="relative flex items-center justify-center min-h-[80vh] sm:min-h-screen overflow-hidden bg-black">
       <!-- Background Image Placeholder -->
@@ -99,9 +99,10 @@
     </section>
 
     <!-- What’s Included Section -->
-    <section class="py-16 bg-[var(--bg-primary)] px-5 sm:px-8 lg:px-24">
-      <h2 class="fade-in pb-16 font-playfair-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-center"> What’s
-        Included</h2>
+    <section class="px-5 sm:px-8 lg:px-24 py-16 bg-[var(--bg-primary)]">
+      <h2 class="fade-in pb-16 font-playfair-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-center">
+        What’s Included
+      </h2>
       <div class="grid sm:grid-rows-2 sm:grid-cols-2 lg:grid-rows-2 lg:grid-cols-3 gap-6">
         <!-- Item 1 -->
         <div
@@ -191,6 +192,326 @@
 
       <div class="fade-in mt-16 flex justify-center">
         <a href="#" class="button">Download E-Book</a>
+      </div>
+    </section>
+
+    <!-- Select Your Tier & Pace Section -->
+    <section class="px-5 sm:px-8 lg:px-16 py-16 bg-[#37405E]">
+      <h2
+        class="fade-in pb-16 font-playfair-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-center text-white">
+        Select Your Tier & Pace
+      </h2>
+      <!-- Introductory Pathway -->
+      <div class="fade-in flex flex-col lg:flex-row">
+        <img src="assets/pathways/introductory-pathway.webp" alt="Two women engaged in discussion" width="383"
+          height="549"
+          class="rounded-t-xl lg:rounded-tr-none lg:rounded-l-xl md:w-full md:h-[400px] lg:w-[383px] lg:h-auto object-cover">
+        <div class="p-6 bg-white rounded-b-xl lg:rounded-bl-none lg:rounded-r-xl flex-1">
+          <h3 class="font-playfair-display text-2xl sm:text-3xl lg:text-4xl font-semibold text-[var(--text-secondary)]">
+            The Introductory Pathway</h3>
+          <p class="py-4">
+            This is our Free Plan to ensure every woman has access to foundational guidance, no matter where she’s
+            starting. It’s perfect for those who are curious, testing the waters, or preparing themselves before
+            investing in deeper transformation.
+          </p>
+          <p class="pb-4">
+            It’s your orientation mission — a chance to step inside, feel the pulse of the community, and see if our
+            world of founders feels like home for your growth (and ours).
+          </p>
+          <p>
+            Here’s what your Entry Pass unlocks:
+          </p>
+          <ul class="mt-8">
+            <li class=" fade-in translate-x-20 active:translate-x-0 flex items-start gap-2"
+              style="transition-delay: 0.2s;">
+              <img src="assets/pathways/icon-tick-circle-blue.svg" alt="Tick circle blue" width="15" height="15"
+                class="mt-1">
+              <p>
+                <span class="font-semibold">Introductory Call –</span>
+                Your personal welcome session to understand your goals and how Upscale can support your journey.
+              </p>
+            </li>
+            <li class="fade-in translate-x-20 active:translate-x-0 flex items-start gap-2 py-4"
+              style="transition-delay: 0.4s;">
+              <img src="assets/pathways/icon-tick-circle-blue.svg" alt="Tick circle blue" width="15" height="15"
+                class="mt-1">
+              <p>
+                <span class="font-semibold">WhatsApp Group Forum -</span>
+                Join live conversations, collaborations, and insights from our vibrant founder network.
+              </p>
+            </li>
+            <li class="fade-in translate-x-20 active:translate-x-0 flex items-start gap-2"
+              style="transition-delay: 0.6s;">
+              <img src="assets/pathways/icon-tick-circle-blue.svg" alt="Tick circle blue" width="15" height="15"
+                class="mt-1">
+              <p>
+                <span class="font-semibold">Searchable Member Directory (basic access) -</span>
+                Explore fellow members, connect with like-minded entrepreneurs, and start building meaningful links.
+              </p>
+            </li>
+          </ul>
+          <div class="fade-in mt-8 flex justify-center">
+            <a href="#" class="button">
+              Join Upscale
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Advanced Pathway -->
+      <div class="fade-in mt-20 flex flex-col lg:flex-row">
+        <img src="assets/pathways/advanced-pathway.webp" alt="Two women engaged in discussion" width="383" height="538"
+          class="bg-white rounded-t-xl lg:rounded-tr-none lg:rounded-l-xl md:w-full md:h-[400px] lg:w-[383px] lg:h-auto object-cover">
+        <div class="p-6 bg-white rounded-b-xl lg:rounded-bl-none lg:rounded-r-xl flex-1">
+          <h3 class="font-playfair-display text-2xl sm:text-3xl lg:text-4xl font-semibold text-[var(--text-secondary)]">
+            The Advanced Pathway</h3>
+          <p class="py-4">
+            With the Paid Plan, you gain access to advanced strategies, hands-on support & mentorship, and the full
+            suite of Upscale resources. It’s ideal for women who are serious about progress, and want a structured
+            guided path to faster, more meaningful results.
+          </p>
+          <p class="pb-4">
+            Here, you step into a complete immersive experience that unlocks advanced guidance, richer support, and
+            accelerated growth. This path unlocks:
+          </p>
+          <ul class="grid sm:grid-flow-col grid-cols-1 sm:grid-rows-3 sm:grid-cols-2 gap-x-2 gap-y-4">
+            <li class=" fade-in translate-x-20 active:translate-x-0 flex items-start gap-2"
+              style="transition-delay: 0.2s;">
+              <img src="assets/pathways/icon-tick-circle-blue.svg" alt="Tick circle blue" width="15" height="15"
+                class="mt-1">
+              <p class="font-semibold">
+                Personal & Business Review – non-financials
+              </p>
+            </li>
+            <li class="fade-in translate-x-20 active:translate-x-0 flex items-start gap-2"
+              style="transition-delay: 0.4s;">
+              <img src="assets/pathways/icon-tick-circle-blue.svg" alt="Tick circle blue" width="15" height="15"
+                class="mt-1">
+              <p class="font-semibold">
+                Quarterly growth check-ins – virtual cohorts
+              </p>
+            </li>
+            <li class="fade-in translate-x-20 active:translate-x-0 flex items-start gap-2"
+              style="transition-delay: 0.6s;">
+              <img src="assets/pathways/icon-tick-circle-blue.svg" alt="Tick circle blue" width="15" height="15"
+                class="mt-1">
+              <p class="font-semibold">
+                Monthly Brew & Bond – in person networking
+              </p>
+            </li>
+            <li class="fade-in translate-x-20 active:translate-x-0 flex items-start gap-2"
+              style="transition-delay: 0.6s;">
+              <img src="assets/pathways/icon-tick-circle-blue.svg" alt="Tick circle blue" width="15" height="15"
+                class="mt-1">
+              <p class="font-semibold">
+                The Rise Lab Program – hybrid
+              </p>
+            </li>
+            <li class="fade-in translate-x-20 active:translate-x-0 flex items-start gap-2"
+              style="transition-delay: 0.6s;">
+              <img src="assets/pathways/icon-tick-circle-blue.svg" alt="Tick circle blue" width="15" height="15"
+                class="mt-1">
+              <p class="font-semibold">
+                Free Guest Passes for select events
+              </p>
+            </li>
+            <li class="fade-in translate-x-20 active:translate-x-0 flex items-start gap-2"
+              style="transition-delay: 0.6s;">
+              <img src="assets/pathways/icon-tick-circle-blue.svg" alt="Tick circle blue" width="15" height="15"
+                class="mt-1">
+              <p class="font-semibold">
+                Full Directory Access
+              </p>
+            </li>
+          </ul>
+          <p class="fade-in mt-6">This is your next level — where alignment meets action, and ambition finds its circle.
+          </p>
+          <div class="fade-in mt-8 flex flex-col items-center gap-2">
+            <p>
+              <span class="font-medium text-2xl">Annual Membership:</span>
+              <span class="font-bold text-xl">US$1272</span>
+            </p>
+            <a href="#" class="button text-sm sm:text-base">
+              Get this price now before it goes up
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rise Lab Program Section -->
+    <section class="px-5 sm:px-8 lg:px-16 py-16 bg-[var(--bg-tertiary)]">
+      <h2 class="fade-in font-playfair-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-center">
+        The Rise Lab Program
+      </h2>
+      <p class="fade-in mx-auto mt-4 mb-12 max-w-xl text-center" style="transition-delay: 0.2s;">
+        Rise Lab is built to take the heavy, confusing parts of entrepreneurship off your shoulders — and replace them
+        with clarity, confidence, and momentum.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center gap-8 lg:gap-12 lg:px-10">
+        <!-- What it Takes Away -->
+        <div
+          class="fade-in -translate-x-20 active:translate-x-0 flex-1 px-8 py-12 bg-white border border-[#D9DBE9] rounded-2xl shadow-md"
+          style="transition-delay: 0.4s;">
+          <h3 class="font-playfair-display text-2xl lg:text-3xl font-medium">What it Takes Away</h3>
+          <ul class="mt-6 space-y-5">
+            <li class="flex gap-4 items-center">
+              <img src="assets/pathways/icon-close.svg" alt="Close icon" width="20" height="20">
+              <p class="text-lg lg:text-xl font-medium">Guessing games</p>
+            </li>
+            <li class="flex gap-4 items-center">
+              <img src="assets/pathways/icon-close.svg" alt="Close icon" width="20" height="20">
+              <p class="text-lg lg:text-xl font-medium">Decision fatigue</p>
+            </li>
+            <li class="flex gap-4 items-center">
+              <img src="assets/pathways/icon-close.svg" alt="Close icon" width="20" height="20">
+              <p class="text-lg lg:text-xl font-medium">Confusion about customers</p>
+            </li>
+            <li class="flex gap-4 items-center">
+              <img src="assets/pathways/icon-close.svg" alt="Close icon" width="20" height="20">
+              <p class="text-lg lg:text-xl font-medium">Inconsistent results</p>
+            </li>
+            <li class="flex gap-4 items-center">
+              <img src="assets/pathways/icon-close.svg" alt="Close icon" width="20" height="20">
+              <p class="text-lg lg:text-xl font-medium">Doing business alone</p>
+            </li>
+            <li class="flex gap-4 items-center">
+              <img src="assets/pathways/icon-close.svg" alt="Close icon" width="20" height="20">
+              <p class="text-lg lg:text-xl font-medium">Burnout from doing everything</p>
+            </li>
+          </ul>
+        </div>
+        <!-- What it Gives Instead -->
+        <div
+          class="fade-in translate-x-20 active:translate-x-0 flex-1 w-full px-8 py-12 bg-white border border-[#D9DBE9] rounded-2xl shadow-md"
+          style="transition-delay: 0.4s;">
+          <h3 class="font-playfair-display text-2xl lg:text-3xl font-medium">What it Gives Instead</h3>
+          <ul class="mt-6 space-y-5">
+            <li class="flex gap-4 items-center">
+              <img src="assets/pathways/icon-tick-circle-green.svg" alt="Tick circle green icon" width="24" height="24">
+              <p class="text-lg lg:text-xl font-medium">Clear roadmap</p>
+            </li>
+            <li class="flex gap-4 items-center">
+              <img src="assets/pathways/icon-tick-circle-green.svg" alt="Tick circle green icon" width="24" height="24">
+              <p class="text-lg lg:text-xl font-medium">Confident Decisions</p>
+            </li>
+            <li class="flex gap-4 items-center">
+              <img src="assets/pathways/icon-tick-circle-green.svg" alt="Tick circle green icon" width="24" height="24">
+              <p class="text-lg lg:text-xl font-medium">Customer clarity</p>
+            </li>
+            <li class="flex gap-4 items-center">
+              <img src="assets/pathways/icon-tick-circle-green.svg" alt="Tick circle green icon" width="24" height="24">
+              <p class="text-lg lg:text-xl font-medium">Predictable growth</p>
+            </li>
+            <li class="flex gap-4 items-center">
+              <img src="assets/pathways/icon-tick-circle-green.svg" alt="Tick circle green icon" width="24" height="24">
+              <p class="text-lg lg:text-xl font-medium">Supportive community</p>
+            </li>
+            <li class="flex gap-4 items-center">
+              <img src="assets/pathways/icon-tick-circle-green.svg" alt="Tick circle green icon" width="24" height="24">
+              <p class="text-lg lg:text-xl font-medium">Smart priorities</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Managed Services Section -->
+    <section>
+      <div class="relative flex items-center justify-center">
+        <h2
+          class="fade-in absolute font-playfair-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-center text-white z-10">
+          Managed Services
+        </h2>
+        <img src="assets/pathways/managed-services.webp" alt="Four women gathered around a desk"
+          class="fade-in w-full h-full object-cover">
+      </div>
+
+      <!-- Services Info -->
+      <div class="flex flex-col sm:flex-row gap-10 lg:gap-20 px-5 sm:px-8 lg:px-16 py-16">
+        <p class="fade-in -translate-x-20 active:translate-x-0 flex-1 text-3xl font-semibold">
+          Building a business also means having a
+          <span class="text-[var(--text-secondary)]">team of experts to back you up,</span>
+          so you can focus on doing what you do best and love.
+        </p>
+        <div class="fade-in translate-x-20 active:translate-x-0 flex-1">
+          <p class="mb-4">
+            We know how tough it is to juggle with family care, school runs and building a business all happening at the
+            same time. With a team on your side, you can do all of this and more with confidence and strength.
+          </p>
+          <p>
+            Our partnership with Miivo is just that. With easy monthly subscriptions you can bootstrap your way into
+            creating an enterprise that not only gives life to your purpose but provides instant insights using AI while
+            you are on the go. It’s literally like having your personal business consultant in the palm of your hands.
+          </p>
+        </div>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-rows-2 lg:grid-cols-4 gap-8 px-5 sm:px-8 lg:px-16 pb-16">
+        <div
+          class="fade-in flex items-center gap-3 p-4 rounded-lg bg-[#F8F1F5] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          style="transition-delay: 0.2s;">
+          <img src="assets/pathways/icon-insights.svg" alt="" width="56" height="56">
+          <p>
+            Access to instant business insights through Miivo.ai
+          </p>
+        </div>
+        <div
+          class="fade-in flex items-center gap-3 p-4 rounded-lg bg-[#F8F1F5] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          style="transition-delay: 0.4s;">
+          <img src="assets/pathways/icon-stack-outline.svg" alt="Stack outline icon" width="56" height="56">
+          <p>
+            Creating your essential business tech stack
+          </p>
+        </div>
+        <div
+          class="fade-in flex items-center gap-3 p-4 rounded-lg bg-[#F8F1F5] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          style="transition-delay: 0.6s;">
+          <img src="assets/pathways/icon-product.svg" alt="Product icon" width="56" height="56">
+          <p>
+            Products listings and management on marketplaces
+          </p>
+        </div>
+        <div
+          class="fade-in flex items-center gap-3 p-4 rounded-lg bg-[#F8F1F5] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          style="transition-delay: 0.8s;">
+          <img src="assets/pathways/icon-marketing.svg" alt="Marketing icon" width="56" height="56">
+          <p>
+            Social media marketing paid campaigns
+          </p>
+        </div>
+        <div
+          class="fade-in flex items-center gap-3 p-4 rounded-lg bg-[#F8F1F5] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          style="transition-delay: 0.2s;">
+          <img src="assets/pathways/icon-website-ui.svg" alt="Website UI icon" width="56" height="56">
+          <p>
+            Graphic & content production
+          </p>
+        </div>
+        <div
+          class="fade-in flex items-center gap-3 p-4 rounded-lg bg-[#F8F1F5] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          style="transition-delay: 0.4s;">
+          <img src="assets/pathways/icon-book.svg" alt="Book icon" width="56" height="56">
+          <p>
+            Book publishing consultation
+          </p>
+        </div>
+        <div
+          class="fade-in flex items-center gap-3 p-4 rounded-lg bg-[#F8F1F5] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          style="transition-delay: 0.6s;">
+          <img src="assets/pathways/icon-arrow-roadmap.svg" alt="Arrow roadmap icon" width="56" height="56">
+          <p>
+            Course creation roadmap
+          </p>
+        </div>
+        <div
+          class="fade-in flex items-center gap-3 p-4 rounded-lg bg-[#F8F1F5] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          style="transition-delay: 0.8s;">
+          <img src="assets/pathways/icon-information-desk.svg" alt="Information desk icon" width="56" height="56">
+          <p>
+            CRM and loyalty program
+          </p>
+        </div>
       </div>
     </section>
   </main>
