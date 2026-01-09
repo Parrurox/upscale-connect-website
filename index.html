@@ -23,32 +23,120 @@
 
 <body class="font-josefin-sans">
   <!-- Header -->
-  <header class="absolute top-0 left-0 right-0 z-50">
-    <div class="container mx-auto px-5 lg:px-4 py-5">
-      <div class="flex justify-between items-center">
-        <!-- Logo -->
-        <div>
-          <a href="index.html">
-            <img src="assets/logo_upscale.svg" alt="Upscale Connect logo" width="136" height="47">
-          </a>
-        </div>
+  <header class="absolute top-0 left-0 right-0 text-white z-50">
+    <!-- Main Navigation -->
+    <div class="px-5 py-5 flex justify-between items-center">
+      <a href="index.html" class="z-40">
+        <img src="assets/logo_upscale.svg" alt="Upscale Connect logo" width="136" height="47">
+      </a>
 
-        <!-- Navigation -->
-        <nav class="hidden md:flex items-center gap-8">
-          <a href="pathways.html" class="text-white hover:text-gray-200 transition">The Pathways</a>
-          <a href="#tools" class="text-white hover:text-gray-200 transition">Tools</a>
-          <a href="about.html" class="text-white hover:text-gray-200 transition">About</a>
-
-          <!-- Buttons -->
-          <div class="flex gap-4 ml-4">
-            <a href="#login"
-              class="px-6 py-2 border border-white text-white rounded-full hover:bg-white hover:text-black transition">
+      <nav class="hidden lg:block" aria-label="Main Navigation">
+        <ul class="flex items-center gap-12">
+          <li><a href="pathways.html" class="hover:text-gray-300 transition">The Pathways</a></li>
+          <li class="relative group">
+            <span class="flex items-center gap-1 cursor-default hover:text-gray-300 transition">
+              Tools
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </span>
+            <ul
+              class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <li><a href="articles.html" class="block px-4 py-2 hover:bg-black/20">Articles</a></li>
+              <li><a href="free-guides.html" class="block px-4 py-2 hover:bg-black/20">Free Guides</a></li>
+              <li><a href="newsletter-signup.html" class="block px-4 py-2 hover:bg-black/20">Newsletter Signup</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html" class="hover:text-gray-300 transition">About</a></li>
+          <li class="flex gap-4 ml-4">
+            <a href="login.html"
+              class="px-6 py-2 border border-white rounded-full hover:bg-white hover:text-black transition">
               Login
             </a>
-            <a href="#join" class="px-6 py-2 bg-white text-black rounded-full hover:bg-gray-100 transition">
+            <a href="register.html" class="px-6 py-2 bg-white text-black rounded-full hover:bg-gray-100 transition">
               Join Upscale
             </a>
-          </div>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="menuToggleBtn" class="lg:hidden p-2 focus:outline-none z-50" aria-expanded="false"
+        aria-controls="mobile-menu">
+        <svg id="hamburgerIcon" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+        <svg id="closeIcon" class="h-8 w-8 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 invisible transition-all duration-300 z-40" role="dialog"
+      aria-modal="true">
+      <div id="menu-overlay"
+        class="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+
+      <div id="menu-content"
+        class="absolute right-0 top-0 h-full w-72 py-8 pt-24 bg-[var(--bg-secondary)] shadow-2xl transform translate-x-full transition-transform ease-in-out duration-300">
+        <nav aria-label="Mobile Navigation">
+          <ul class="flex flex-col text-xl space-y-2">
+            <li class="w-full">
+              <a href="pathways.html" class="block w-full px-8 py-3 text-right hover:bg-white/5 transition">
+                The Pathways
+              </a>
+            </li>
+            <li class="w-full">
+              <input type="checkbox" id="tools-menu-toggle" class="peer hidden" />
+
+              <label for="tools-menu-toggle"
+                class="flex items-center justify-end gap-1 w-full px-8 py-3 text-right hover:bg-white/5 transition cursor-pointer select-none">
+                Tools
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </label>
+
+              <ul
+                class="flex flex-col max-h-0 bg-white/5 overflow-hidden transition-all duration-300 ease-in-out peer-checked:max-h-64">
+                <li>
+                  <a href="articles.html" class="block w-full px-8 py-3 text-right text-base hover:bg-white/10">
+                    Articles
+                  </a>
+                </li>
+                <li>
+                  <a href="free-guides.html" class="block w-full px-8 py-3 text-right text-base hover:bg-white/10">
+                    Free Guides
+                  </a>
+                </li>
+                <li>
+                  <a href="newsletter-signup.html"
+                    class="block w-full px-8 py-3 text-right text-base hover:bg-white/10">
+                    Newsletter Signup
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="w-full">
+              <a href="about.html" class="block w-full px-8 py-3 text-right hover:bg-white/5 transition">About</a>
+            </li>
+            <li class="px-8 py-10">
+              <div class="w-full h-px bg-white/10"></div>
+            </li>
+            <li class="px-8 pb-5">
+              <a href="login.html"
+                class="block w-full px-6 py-3 bg-white text-black rounded-full font-bold text-center hover:bg-gray-200 transition">
+                Login
+              </a>
+            </li>
+            <li class="px-8">
+              <a href="register.html"
+                class="block w-full px-6 py-3 bg-white text-black rounded-full font-bold text-center hover:bg-gray-200 transition">
+                Join Upscale
+              </a>
+            </li>
+          </ul>
         </nav>
       </div>
     </div>
@@ -70,13 +158,13 @@
           <h1 class="animate-fade-in-up mb-6 font-playfair-display text-5xl md:text-6xl lg:text-8xl italic">
             Boldly Building Businesses Together
           </h1>
-          <p class="animate-fade-in-up [animation-delay:200ms] max-w-lg text-lg md:text-xl">Reignite ambition, embrace
-            entrepreneurship, and turn
-            life’s pauses into powerful opportunities. </p>
+          <p class="animate-fade-in-up [animation-delay:200ms] max-w-lg text-lg md:text-xl">
+            Reignite ambition, embrace entrepreneurship, and turn life’s pauses into powerful opportunities.
+          </p>
 
           <!-- CTA Button -->
           <div class="mt-10 animate-fade-in-up [animation-delay:200ms]">
-            <a href="#" class="button">
+            <a href="register.html" class="button">
               Join Upscale
             </a>
           </div>
@@ -88,7 +176,9 @@
     <section class="px-5 sm:px-8 lg:px-16 py-20 bg-[var(--bg-primary)]">
       <h2
         class="fade-in -translate-y-20 active:translate-y-0 mb-14 font-playfair-display font-semibold text-4xl lg:text-5xl text-center">
-        The Experience</h2>
+        The Experience
+      </h2>
+
       <div class="grid md:grid-cols-2 gap-10 lg:gap-x-24 lg:gap-y-16">
         <!-- Experience Image 1 -->
         <div class="fade-in -translate-x-20 active:translate-x-0 order-1">
@@ -119,6 +209,7 @@
             skip the guest work and zero-in on what truly drives growth - using our proven playbooks built for any
             business to attract the right customers.</p>
         </div>
+
         <!-- Experience Content 2 -->
         <div class="fade-in -translate-x-20 active:translate-x-0 order-4 sm:order-3 relative isolate">
           <img src="assets/homepage/two.svg" alt="Two"
@@ -143,6 +234,7 @@
             alt="Group of people sit around a table in a conference room with laptops and papers" width="526"
             height="518" class="w-full object-cover">
         </div>
+
         <!-- Experience Image 3 -->
         <div class="fade-in -translate-x-20 active:translate-x-0 order-5">
           <img src="assets/homepage/experience-03.webp"
@@ -191,41 +283,48 @@
           <img src="assets/homepage/world-map.svg" alt="World map" class="w-1/2 h-full object-cover">
         </div>
       </div>
+
       <div class="relative flex flex-col sm:flex-row justify-between gap-12 lg:gap-24 text-white">
         <div class="max-w-xl">
           <h2 class="fade-in font-playfair-display font-semibold text-4xl lg:text-5xl text-center sm:text-left">The
-            World Needs
-            More Women Entrepreneurs
+            World Needs More Women Entrepreneurs
           </h2>
+
+          <!-- Stats -->
           <div class="grid grid-cols-2 gap-y-7 lg:gap-7 mt-12">
             <div class="border-l-4 border-[var(--button-color)]">
               <p class="pl-8 mb-3 font-familjen-grotesk font-medium text-base">Only</p>
               <p class="count-up pl-8 font-familjen-grotesk font-semibold text-5xl lg:text-6xl" data-target="37%">0</p>
-              <p class="pl-8 mt-2 font-semibold text-md lg:text-lg leading-tight">Of all entrepreneurs worldwide are
-                women</p>
+              <p class="pl-8 mt-2 font-semibold text-md lg:text-lg leading-tight">
+                Of all entrepreneurs worldwide are women
+              </p>
             </div>
             <div class="border-l-4 border-[var(--button-color)]">
               <p class="pl-8 mb-3 font-familjen-grotesk font-medium text-base">Only</p>
               <p class="count-up pl-8 font-familjen-grotesk font-semibold text-5xl lg:text-6xl" data-target="5%">0</p>
-              <p class="pl-8 mt-2 font-semibold text-md lg:text-lg leading-tight">Of all Unicorn startups have a female
-                CEO</p>
+              <p class="pl-8 mt-2 font-semibold text-md lg:text-lg leading-tight">
+                Of all Unicorn startups have a female CEO
+              </p>
             </div>
             <div class="border-l-4 border-[var(--button-color)]">
               <p class="pl-8 mb-3 font-familjen-grotesk font-medium text-base">Only</p>
               <p class="count-up pl-8 font-familjen-grotesk font-semibold text-5xl lg:text-6xl" data-target="31%">0</p>
-              <p class="pl-8 mt-2 font-semibold text-md lg:text-lg leading-tight">Of all SMEs globally are owned by
-                women</p>
+              <p class="pl-8 mt-2 font-semibold text-md lg:text-lg leading-tight">
+                Of all SMEs globally are owned by women
+              </p>
             </div>
             <div class="border-l-4 border-[var(--button-color)]">
               <p class="pl-8 mb-3 font-familjen-grotesk font-medium text-base">Only</p>
               <p class="count-up pl-8 font-familjen-grotesk font-semibold text-5xl lg:text-6xl" data-target="10.2%">0
               </p>
-              <p class="pl-8 mt-2 font-semibold text-md lg:text-lg leading-tight">Total global entrepreneurial activity
-                rate for
-                women </p>
+              <p class="pl-8 mt-2 font-semibold text-md lg:text-lg leading-tight">
+                Total global entrepreneurial activity rate for women
+              </p>
             </div>
           </div>
         </div>
+
+        <!-- Background Image -->
         <div class="fade-in relative isolate mt-12 lg:mt-0 h-fit">
           <div class="absolute -left-4 -bottom-4 w-full h-full bg-[var(--bg-secondary)] z-[-1]">
           </div>
@@ -244,102 +343,9 @@
         <p class=" font-allura-regular text-5xl lg:text-6xl">If she can do it, you can too</p>
       </div>
 
-      <!-- Testimonials Container -->
-      <div id="testimonials-container" class="flex pb-10 space-x-6 overflow-x-auto overflow-y-hidden no-scrollbar">
-        <!-- Testimonial Card 1 -->
-        <div class="fade-in flex-shrink-0 w-72 text-center" style="transition-delay: 0.2s;">
-          <div class="relative rounded-xl overflow-hidden mb-4 group">
-            <!-- Image Placeholder -->
-            <div class="bg-gray-300 h-80 w-full flex items-center justify-center text-gray-500">
-              <img src="assets/homepage/testimonial-01.webp" alt="Testimonial candidate" width="299" height="383"
-                class="w-full h-full object-cover">
-            </div>
-            <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
-              <h3 class="text-white font-bold text-lg">Ayesha Khan</h3>
-              <p class="text-white text-sm">Founder, Craft & Co</p>
-            </div>
-          </div>
-          <p class="text-gray-600 text-sm leading-relaxed text-left italic font-semibold">
-            "Through Upscale Connect, I met collaborators who helped me scale my business faster than I
-            imagined."
-          </p>
-        </div>
-        <!-- Testimonial Card 2 -->
-        <div class="fade-in flex-shrink-0 w-72 text-center" style="transition-delay: 0.4s;">
-          <div class="relative rounded-xl overflow-hidden mb-4 group">
-            <!-- Image Placeholder -->
-            <div class="bg-gray-300 h-80 w-full flex items-center justify-center text-gray-500">
-              <img src="assets/homepage/testimonial-02.webp" alt="Testimonial candidate" width="299" height="383"
-                class="w-full h-full object-cover">
-            </div>
-            <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
-              <h3 class="text-white font-bold text-lg">Ayesha Khan</h3>
-              <p class="text-white text-sm">Founder, Craft & Co</p>
-            </div>
-          </div>
-          <p class="text-gray-600 text-sm leading-relaxed text-left italic font-semibold">
-            "Being part of this community has given us access to partnerships and visibility that
-            transformed our growth strategy."
-          </p>
-        </div>
-        <!-- Testimonial Card 3 -->
-        <div class="fade-in flex-shrink-0 w-72 text-center" style="transition-delay: 0.6s;">
-          <div class="relative rounded-xl overflow-hidden mb-4 group">
-            <!-- Image Placeholder -->
-            <div class="bg-gray-300 h-80 w-full flex items-center justify-center text-gray-500">
-              <img src="assets/homepage/testimonial-03.webp" alt="Testimonial candidate" width="299" height="383"
-                class="w-full h-full object-cover">
-            </div>
-            <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
-              <h3 class="text-white font-bold text-lg">Ayesha Khan</h3>
-              <p class="text-white text-sm">Founder, Craft & Co</p>
-            </div>
-          </div>
-          <p class="text-gray-600 text-sm leading-relaxed text-left italic font-semibold">
-            "Our team gained new perspectives, connections, and energy that continue to impact our
-            culture and results."
-          </p>
-        </div>
-        <!-- Testimonial Card 4 -->
-        <div class="fade-in flex-shrink-0 w-72 text-center" style="transition-delay: 0.8s;">
-          <div class="relative rounded-xl overflow-hidden mb-4 group">
-            <!-- Image Placeholder -->
-            <div class="bg-gray-300 h-80 w-full flex items-center justify-center text-gray-500">
-              <img src="assets/homepage/testimonial-04.webp" alt="Testimonial candidate" width="299" height="383"
-                class="w-full h-full object-cover">
-            </div>
-            <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
-              <h3 class="text-white font-bold text-lg">Ayesha Khan</h3>
-              <p class="text-white text-sm">Founder, Craft & Co</p>
-            </div>
-          </div>
-          <p class="text-gray-600 text-sm leading-relaxed text-left italic font-semibold">
-            "It's a space where ideas turn into real collaborations. I walked away from one event with
-            two new clients and a mentor."
-          </p>
-        </div>
-        <!-- Testimonial Card 5 -->
-        <div class="fade-in-section flex-shrink-0 w-72 text-center" style="transition-delay: 0.8s;">
-          <div class="relative rounded-xl overflow-hidden mb-4 group">
-            <!-- Image Placeholder -->
-            <div class="bg-gray-300 h-80 w-full flex items-center justify-center text-gray-500">
-              <img src="assets/homepage/testimonial-04.webp" alt="Testimonial candidate" width="299" height="383"
-                class="w-full h-full object-cover">
-            </div>
-            <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
-              <h3 class="text-white font-bold text-lg">Ayesha Khan</h3>
-              <p class="text-white text-sm">Founder, Craft & Co</p>
-            </div>
-          </div>
-          <p class="text-gray-600 text-sm leading-relaxed text-left italic font-semibold">
-            "It's a space where ideas turn into real collaborations. I walked away from one event with
-            two new clients."
-          </p>
-        </div>
-      </div>
-
-      <!-- Navigation Arrows -->
+      <!-- Testimonials -->
       <div class="flex justify-center items-center space-x-4">
+        <!-- Navigation Left Arrow -->
         <button id="prev-testimonial" aria-label="Go to previous slide"
           class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center hover:bg-[var(--text-secondary)] transition text-gray-600">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-black" fill="none" viewBox="0 0 24 24"
@@ -347,6 +353,106 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
           </svg>
         </button>
+
+        <!-- Testimonials Container -->
+        <div id="testimonials-container" class="flex pb-10 space-x-6 overflow-x-auto overflow-y-hidden no-scrollbar">
+          <!-- Testimonial Card 1 -->
+          <div class="fade-in flex-shrink-0 w-72 text-center" style="transition-delay: 0.2s;">
+            <div class="relative rounded-xl overflow-hidden mb-4 group">
+              <!-- Image Placeholder -->
+              <div class="bg-gray-300 h-80 w-full flex items-center justify-center text-gray-500">
+                <img src="assets/homepage/testimonial-01.webp" alt="Testimonial candidate" width="299" height="383"
+                  class="w-full h-full object-cover">
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
+                <h3 class="text-white font-bold text-lg">Ayesha Khan</h3>
+                <p class="text-white text-sm">Founder, Craft & Co</p>
+              </div>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed text-left italic font-semibold">
+              "Through Upscale Connect, I met collaborators who helped me scale my business faster than I
+              imagined."
+            </p>
+          </div>
+
+          <!-- Testimonial Card 2 -->
+          <div class="fade-in flex-shrink-0 w-72 text-center" style="transition-delay: 0.4s;">
+            <div class="relative rounded-xl overflow-hidden mb-4 group">
+              <!-- Image Placeholder -->
+              <div class="bg-gray-300 h-80 w-full flex items-center justify-center text-gray-500">
+                <img src="assets/homepage/testimonial-02.webp" alt="Testimonial candidate" width="299" height="383"
+                  class="w-full h-full object-cover">
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
+                <h3 class="text-white font-bold text-lg">Ayesha Khan</h3>
+                <p class="text-white text-sm">Founder, Craft & Co</p>
+              </div>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed text-left italic font-semibold">
+              "Being part of this community has given us access to partnerships and visibility that
+              transformed our growth strategy."
+            </p>
+          </div>
+
+          <!-- Testimonial Card 3 -->
+          <div class="fade-in flex-shrink-0 w-72 text-center" style="transition-delay: 0.6s;">
+            <div class="relative rounded-xl overflow-hidden mb-4 group">
+              <!-- Image Placeholder -->
+              <div class="bg-gray-300 h-80 w-full flex items-center justify-center text-gray-500">
+                <img src="assets/homepage/testimonial-03.webp" alt="Testimonial candidate" width="299" height="383"
+                  class="w-full h-full object-cover">
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
+                <h3 class="text-white font-bold text-lg">Ayesha Khan</h3>
+                <p class="text-white text-sm">Founder, Craft & Co</p>
+              </div>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed text-left italic font-semibold">
+              "Our team gained new perspectives, connections, and energy that continue to impact our
+              culture and results."
+            </p>
+          </div>
+
+          <!-- Testimonial Card 4 -->
+          <div class="fade-in flex-shrink-0 w-72 text-center" style="transition-delay: 0.8s;">
+            <div class="relative rounded-xl overflow-hidden mb-4 group">
+              <!-- Image Placeholder -->
+              <div class="bg-gray-300 h-80 w-full flex items-center justify-center text-gray-500">
+                <img src="assets/homepage/testimonial-04.webp" alt="Testimonial candidate" width="299" height="383"
+                  class="w-full h-full object-cover">
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
+                <h3 class="text-white font-bold text-lg">Ayesha Khan</h3>
+                <p class="text-white text-sm">Founder, Craft & Co</p>
+              </div>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed text-left italic font-semibold">
+              "It's a space where ideas turn into real collaborations. I walked away from one event with
+              two new clients and a mentor."
+            </p>
+          </div>
+
+          <!-- Testimonial Card 5 -->
+          <div class="fade-in-section flex-shrink-0 w-72 text-center" style="transition-delay: 0.8s;">
+            <div class="relative rounded-xl overflow-hidden mb-4 group">
+              <!-- Image Placeholder -->
+              <div class="bg-gray-300 h-80 w-full flex items-center justify-center text-gray-500">
+                <img src="assets/homepage/testimonial-04.webp" alt="Testimonial candidate" width="299" height="383"
+                  class="w-full h-full object-cover">
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
+                <h3 class="text-white font-bold text-lg">Ayesha Khan</h3>
+                <p class="text-white text-sm">Founder, Craft & Co</p>
+              </div>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed text-left italic font-semibold">
+              "It's a space where ideas turn into real collaborations. I walked away from one event with
+              two new clients."
+            </p>
+          </div>
+        </div>
+
+        <!-- Navigation Right Arrow -->
         <button id="next-testimonial" aria-label="Go to next slide"
           class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center hover:bg-[var(--text-secondary)] transition text-gray-600">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-black" fill="none" viewBox="0 0 24 24"
@@ -380,7 +486,7 @@
           <p class="text-2xl lg:text-2xl">Find out now - Its FREE!</p>
         </div>
         <div class="mt-8">
-          <a href="#" class="button">Get Your E-Book</a>
+          <a href="https://tally.so/r/68DbeY" class="button">Take the Quiz</a>
         </div>
       </div>
     </section>
@@ -388,142 +494,22 @@
     <!-- Complete Entrepreneurial Profile Section -->
     <section class="flex flex-col lg:flex-row gap-10 sm:gap-16 px-5 sm:px-8 lg:px-16 py-20 bg-[var(--bg-tertiary)]">
       <div class="fade-in flex flex-col  lg:max-w-lg">
-        <p class="font-playfair-display font-semibold text-4xl lg:text-5xl">From Within and Beyond: The Complete
-          Entrepreneurial
-          Profile</p>
-        <p class="pt-10 pb-5 font-medium text-lg lg:text-xl">Every successful venture begins with you—your mindset,
-          energy, and the
-          way you lead. This infograph reveals the ten traits that define powerful entrepreneurs: five intrinsic that
-          fuel your inner drive, and five extrinsic that amplify your impact. When who you are and what you do align,
-          you unlock the unstoppable force of true entrepreneurship.</p>
-        <p class="font-medium text-lg lg:text-xl">Entrepreneurship isn’t just a skill—it’s a reflection of your growth,
-          courage, and belief in what’s possible.</p>
+        <p class="font-playfair-display font-semibold text-4xl lg:text-5xl">
+          From Within and Beyond: The Complete Entrepreneurial Profile
+        </p>
+        <p class="pt-10 pb-5 font-medium text-lg lg:text-xl">Every successful venture begins with you—your mindset,
+          energy, and the way you lead. This infograph reveals the ten traits that define powerful entrepreneurs: five
+          intrinsic that fuel your inner drive, and five extrinsic that amplify your impact. When who you are and what
+          you do align, you unlock the unstoppable force of true entrepreneurship.</p>
+        <p class="font-medium text-lg lg:text-xl">
+          Entrepreneurship isn’t just a skill—it’s a reflection of your growth, courage, and belief in what’s possible.
+        </p>
       </div>
+
+      <!-- 5 Extrinsic Qualities Wheel -->
       <div class="sm:mx-auto">
-        <img src="assets/homepage/extrinsic-qualities.svg" alt="5 extrinsic qualities chart" width="602" height="602"
+        <img src="assets/homepage/extrinsic-qualities.svg" alt="5 extrinsic qualities wheel" width="602" height="602"
           class="animate-slow-spin cursor-pointer">
-      </div>
-    </section>
-
-    <!-- Upcoming Events Section -->
-    <section class="px-5 sm:px-8 lg:px-16 py-20 flex flex-col justify-center">
-      <div class="container mx-auto px-6 lg:px-5">
-        <div class="fade-in flex justify-between items-center mb-8 py-4">
-          <div class="flex items-end gap-2">
-            <h2 class="font-playfair-display text-4xl lg:text-5xl font-semibold">
-              Coming Up
-            </h2>
-            <div class="flex space-x-1">
-              <span class="w-2 h-2 bg-black rounded-full animate-wave"></span>
-              <span class="w-2 h-2 bg-black rounded-full animate-wave wave-delay-100"></span>
-              <span class="w-2 h-2 bg-black rounded-full animate-wave wave-delay-200"></span>
-            </div>
-          </div>
-          <div class="flex space-x-2">
-            <button id="prev-event" aria-label="Go to previous slide"
-              class="w-10 h-10 border rounded-full flex items-center justify-center bg-gray-300 hover:bg-[var(--text-secondary)] transition">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-black" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button id="next-event" aria-label="Go to next slide"
-              class="w-10 h-10 border rounded-full flex items-center justify-center bg-gray-300 hover:bg-[var(--text-secondary)] transition">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-black" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Events Grid -->
-        <div id="events-container" class="flex overflow-x-auto gap-8 pb-20 no-scrollbar">
-          <!-- Event Card 1 -->
-          <div class="fade-in relative rounded-xl overflow-hidden group aspect-square w-80 flex-shrink-0"
-            style="transition-delay: 0.2s;">
-            <img src="assets/homepage/upcoming_event_1.webp" alt="The Autumn Fair" width="388" height="373"
-              class="w-full h-full object-cover">
-            <div
-              class="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-end p-6 text-white transition-all duration-300 group-hover:bg-opacity-50">
-              <h3 class="text-xl font-medium mb-4">The Autumn Fair: Women in Business Edition</h3>
-              <div class="flex items-start gap-6 text-sm mb-4">
-                <div>
-                  <p class="text-base opacity-80">Date</p>
-                  <p class="text-base font-medium">Oct 29</p>
-                </div>
-                <div>
-                  <p class="text-base opacity-80">Place</p>
-                  <p class="text-base font-medium">Blumi Cafe, Dubai</p>
-                </div>
-              </div>
-              <a href="#" class="font-semibold flex items-center gap-1">View Details
-                &rarr;</a>
-            </div>
-          </div>
-          <!-- Event Card 2 -->
-          <div class="fade-in relative rounded-xl overflow-hidden group aspect-square w-80 flex-shrink-0"
-            style="transition-delay: 0.4s;">
-            <img src="assets/homepage/upcoming_event_2.webp" alt="Upscale Leadership Summit" width="388" height="373"
-              class="w-full h-full object-cover">
-            <div
-              class="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-end p-6 text-white transition-all duration-300 group-hover:bg-opacity-50">
-              <h3 class="text-xl font-medium mb-4">Upscale Leadership Summit 2025</h3>
-              <div class="flex items-start gap-6 text-sm mb-4">
-                <div>
-                  <p class="text-base opacity-80">Date</p>
-                  <p class="text-base font-medium">Oct 29</p>
-                </div>
-                <div>
-                  <p class="text-base opacity-80">Place</p>
-                  <p class="text-base font-medium">Abu Dhabi</p>
-                </div>
-              </div>
-              <a href="#" class="font-semibold flex items-center gap-1">View Details
-                &rarr;</a>
-            </div>
-          </div>
-          <!-- Event Card 3 -->
-          <div class="fade-in relative rounded-xl overflow-hidden group aspect-square w-80 flex-shrink-0"
-            style="transition-delay: 0.6s;">
-            <img src="assets/homepage/upcoming_event_3.webp" alt="The Visionaries Mixer" width="388" height="373"
-              class="w-full h-full object-cover">
-            <div
-              class="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-end p-6 text-white transition-all duration-300 group-hover:bg-opacity-50">
-              <h3 class="text-xl font-medium mb-4">The Visionaries Mixer: Year-End Connect</h3>
-              <div class="flex items-start gap-6 text-sm mb-4">
-                <div>
-                  <p class="text-base opacity-80">Date</p>
-                  <p class="text-base font-medium">Oct 29</p>
-                </div>
-                <div>
-                  <p class="text-base opacity-80">Place</p>
-                  <p class="text-base font-medium">Blumi Cafe, Dubai</p>
-                </div>
-              </div>
-              <a href="#" class="font-semibold flex items-center gap-1">View Details
-                &rarr;</a>
-            </div>
-          </div>
-          <!-- Event Card 4 -->
-          <div class="fade-in relative rounded-xl overflow-hidden group aspect-square w-80 flex-shrink-0"
-            style="transition-delay: 0.8s;">
-            <img src="assets/homepage/upcoming_event_4.webp" alt="Upscale Summit" width="388" height="373"
-              class="w-full h-full object-cover">
-            <div
-              class="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-end p-6 text-white transition-all duration-300 group-hover:bg-opacity-50">
-              <h3 class="text-xl font-medium mb-4">Upscale Summit</h3>
-              <div class="flex items-start gap-6 text-sm mb-4">
-                <div>
-                  <p class="text-base opacity-80">Date</p>
-                  <p class="text-base font-medium">Oct 29</p>
-                </div>
-              </div>
-              <a href="#" class="font-semibold flex items-center gap-1">View Details
-                &rarr;</a>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -532,12 +518,13 @@
       class="flex flex-col md:flex-row gap-7 sm:gap-16 lg:justify-between px-5 sm:px-8 lg:px-16 py-20 bg-[var(--bg-primary)]">
       <div class="fade-in flex flex-col sm:max-w-sm lg:max-w-lg">
         <p class="font-playfair-display font-semibold text-4xl lg:text-5xl">The Power of Building Dreams Together</p>
-        <p class="pt-10 pb-5 font-medium text-lg lg:text-xl">Hi there, I’m Nusrat — and if you’ve found your way
-          here, it’s probably because there’s a dream within you waiting to rise, just like the one that began in me.
-          Let’s work together to bring that dream alive.</p>
-        <p class="font-allura-regular text-3xl lg:text-4xl text-[var(--text-secondary)]">Because success feels better
-          when it’s
-          shared.</p>
+        <p class="pt-10 pb-5 font-medium text-lg lg:text-xl">
+          Hi there, I’m Nusrat — and if you’ve found your way here, it’s probably because there’s a dream within you
+          waiting to rise, just like the one that began in me. Let’s work together to bring that dream alive.
+        </p>
+        <p class="font-allura-regular text-3xl lg:text-4xl text-[var(--text-secondary)]">
+          Because success feels better when it’s shared.
+        </p>
         <div class="mt-5 text-center sm:text-left">
           <a href="about.html" class="button">About Us</a>
         </div>
@@ -562,23 +549,34 @@
           <p class="hidden sm:flex font-familjen-grotesk text-sm text-white/50">&copy;All Rights Reserved 2025</p>
         </div>
 
+        <!-- Navigation -->
         <nav class="grid grid-cols-2 sm:grid-cols-3 gap-8 w-full md:w-auto">
           <ul class="space-y-4">
             <li><a href="index.html" class="hover:text-gray-300 transition">Home</a></li>
-            <li><a href="#" class="hover:text-gray-300 transition">Community</a></li>
-            <li><a href="#" class="hover:text-gray-300 transition">Events</a></li>
-            <li><a href="#" class="hover:text-gray-300 transition">Memberships</a></li>
-            <li><a href="#" class="hover:text-gray-300 transition">Partnerships</a></li>
+            <li><a href="pathways.html" class="hover:text-gray-300 transition">Pathways</a></li>
+            <li><a href="articles.html" class="hover:text-gray-300 transition">Articles</a></li>
+            <li><a href="free-guides.html" class="hover:text-gray-300 transition">Free Guides</a></li>
+            <li><a href="about.html" class="hover:text-gray-300 transition">About Us</a></li>
           </ul>
           <ul class="space-y-4">
-            <li><a href="#" class="hover:text-gray-300 transition">Privacy Policy</a></li>
-            <li><a href="#" class="hover:text-gray-300 transition">Terms & Conditions</a></li>
-            <li><a href="#" class="hover:text-gray-300 transition">Contact Support</a></li>
+            <li><a href="newsletter-signup.html" class="hover:text-gray-300 transition">Newsletter</a></li>
+            <li><a href="privacy-policy.html" class="hover:text-gray-300 transition">Privacy Policy</a></li>
+            <li><a href="terms-conditions.html" class="hover:text-gray-300 transition">Terms & Conditions</a></li>
+            <li><a href="contact.html" class="hover:text-gray-300 transition">Contact Support</a></li>
           </ul>
           <ul class="sm:ml-8 space-y-4">
-            <li><a href="#" class="hover:text-gray-300 transition">Instagram</a></li>
-            <li><a href="#" class="hover:text-gray-300 transition">LinkedIn</a></li>
-            <li><a href="#" class="hover:text-gray-300 transition">YouTube</a></li>
+            <li>
+              <a href="https://www.instagram.com/upscaleconnect/?igsh=MTduY29uemd6eXBuag%3D%3D"
+                class="hover:text-gray-300 transition">
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/profile.php?id=100091536547375&mibextid=ZbWKwL"
+                class="hover:text-gray-300 transition">
+                Facebook
+              </a>
+            </li>
           </ul>
         </nav>
 
@@ -588,7 +586,6 @@
   </footer>
 
   <script src="script.js"></script>
-
 </body>
 
 </html>

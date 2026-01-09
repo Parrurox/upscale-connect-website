@@ -88,6 +88,23 @@
   width: 100%;
 }
 
+/* Mobile Menu */
+.menu-open {
+  overflow: hidden;
+}
+
+.menu-open #mobile-menu {
+  visibility: visible;
+}
+
+.menu-open #menu-overlay {
+  opacity: 1;
+}
+
+.menu-open #menu-content {
+  transform: translateX(0);
+}
+
 /* Scroll Animation Styles */
 .fade-in {
   opacity: 0;

@@ -1,4 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Mobile Menu
+  const body = document.body;
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const hamburgerIcon = document.getElementById('hamburgerIcon');
+  const closeIcon = document.getElementById('closeIcon');
+  const menuOverlay = document.getElementById('menu-overlay');
+
+  const toggleMenu = () => {
+    const isOpen = body.classList.toggle('menu-open');
+
+    menuToggleBtn.setAttribute('aria-expanded', isOpen);
+    hamburgerIcon.classList.toggle('hidden', isOpen);
+    closeIcon.classList.toggle('hidden', !isOpen);
+  };
+
+  menuToggleBtn.addEventListener('click', toggleMenu);
+  menuOverlay.addEventListener('click', toggleMenu);
+
   // Intersection Observer for scroll animations
   const fadeElements = document.querySelectorAll(".fade-in");
 
