@@ -68,31 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Events Slider
-  const eventsContainer = document.getElementById("events-container");
-  const prevEventButton = document.getElementById("prev-event");
-  const nextEventButton = document.getElementById("next-event");
-
-  if (eventsContainer && prevEventButton && nextEventButton) {
-    const eventCard = eventsContainer.querySelector(".flex-shrink-0");
-    // w-96 is 24rem (384px), gap-8 is 2rem (32px)
-    const eventScrollAmount = eventCard.offsetWidth + 32;
-
-    nextEventButton.addEventListener("click", () => {
-      eventsContainer.scrollBy({
-        left: eventScrollAmount,
-        behavior: "smooth",
-      });
-    });
-
-    prevEventButton.addEventListener("click", () => {
-      eventsContainer.scrollBy({
-        left: -eventScrollAmount,
-        behavior: "smooth",
-      });
-    });
-  }
-
   // Number Count-Up Animation
   const countUpObserver = new IntersectionObserver(
     (entries, observer) => {
@@ -134,4 +109,73 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".count-up").forEach((el) => {
     countUpObserver.observe(el);
   });
+
+  // Setup Expert and Partner Modals
+  function setupModal(modalId, openBtnId, closeBtnId, scrollId) {
+    const modal = document.getElementById(modalId);
+    const openBtn = document.getElementById(openBtnId);
+    const closeBtn = document.getElementById(closeBtnId);
+    const scrollContainer = document.getElementById(scrollId);
+    const body = document.body;
+
+    if (!modal || !openBtn || !closeBtn) return;
+
+    openBtn.addEventListener('click', () => {
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      body.classList.add('no-scroll');
+
+      if (scrollContainer) {
+        scrollContainer.scrollTop = 0;
+      }
+    });
+
+    const closeModal = () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      body.classList.remove('no-scroll');
+      modal.querySelector('form').reset();
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+  }
+
+  setupModal('expertModal', 'openExpertModalBtn', 'closeExpertModalBtn', 'expertScrollContainer');
+  setupModal('partnerModal', 'openPartnerModalBtn', 'closePartnerModalBtn', 'partnerScrollContainer');
+
+  // Experts Carousel
+  const expertsCarousel = document.getElementById('expertsCarousel');
+  const expertsCarouselPrevBtn = document.getElementById('expertsCarouselPrevBtn');
+  const expertsCarouselNextBtn = document.getElementById('expertsCarouselNextBtn');
+
+  let autoPlayInterval;
+
+  const moveCarousel = (direction) => {
+    const scrollAmount = expertsCarousel.clientWidth;
+    const isAtEnd = expertsCarousel.scrollLeft + expertsCarousel.clientWidth >= expertsCarousel.scrollWidth - 50;
+
+    if (direction === 1 && isAtEnd) {
+      expertsCarousel.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      expertsCarousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
+  };
+
+  expertsCarouselPrevBtn.addEventListener('click', () => moveCarousel(-1));
+  expertsCarouselNextBtn.addEventListener('click', () => moveCarousel(1));
+
+  const startAutoPlay = () => {
+    autoPlayInterval = setInterval(() => moveCarousel(1), 5000);
+  };
+
+  const stopAutoPlay = () => clearInterval(autoPlayInterval);
+
+  startAutoPlay();
+  expertsCarousel.addEventListener('mouseenter', stopAutoPlay);
+  expertsCarousel.addEventListener('mouseleave', startAutoPlay);
 });

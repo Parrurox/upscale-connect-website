@@ -121,14 +121,16 @@
 /* Hide scrollbar for testimonials */
 .no-scrollbar {
   -ms-overflow-style: none;
-  /* IE and Edge */
   scrollbar-width: none;
-  /* Firefox */
 }
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
-  /* Chrome, Safari, and Opera */
+}
+
+/* Disable Modal Background Scroll */
+.no-scroll {
+  overflow: hidden;
 }
 
 /* Fade Up Animate */
@@ -225,5 +227,25 @@
 
   100% {
     background-position: 0% 50%;
+  }
+}
+
+/* Partners Marquee Animation */
+.animate-marquee {
+  display: flex;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-container:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
   }
 }
