@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Reignite ambition, embrace entrepreneurship, and turn life’s pauses into powerful opportunities.">
+  <title>Newsletter Signup - Upscale Connect</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="font-josefin-sans">
+  <!-- Header -->
+  <header class="absolute top-0 left-0 right-0 bg-[var(--bg-secondary)] text-white z-50">
+    <!-- Main Navigation -->
+    <div class="px-5 py-5 flex justify-between items-center">
+      <a href="index.html" class="z-40">
+        <img src="assets/logo-upscale.svg" alt="Upscale Connect logo" width="136" height="47">
+      </a>
+
+      <nav class="hidden lg:block" aria-label="Main Navigation">
+        <ul class="flex items-center gap-12">
+          <li><a href="pathways.html" class="hover:text-gray-300 transition">The Pathways</a></li>
+          <li class="relative group">
+            <span class="flex items-center gap-1 cursor-default hover:text-gray-300 transition">
+              Tools
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </span>
+            <ul
+              class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <li><a href="articles.html" class="block px-4 py-2 hover:bg-black/20">Articles</a></li>
+              <li><a href="guides.html" class="block px-4 py-2 hover:bg-black/20">Free Guides</a></li>
+              <li><a href="subscribe.html" class="block px-4 py-2 hover:bg-black/20">Newsletter Signup</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html" class="hover:text-gray-300 transition">About</a></li>
+          <li class="flex gap-4 ml-4">
+            <a href="login.html"
+              class="px-6 py-2 border border-white rounded-full hover:bg-white hover:text-black transition">
+              Login
+            </a>
+            <a href="register.html" class="px-6 py-2 bg-white text-black rounded-full hover:bg-gray-100 transition">
+              Join Upscale
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="menuToggleBtn" class="lg:hidden p-2 focus:outline-none z-50" aria-expanded="false"
+        aria-controls="mobile-menu">
+        <svg id="hamburgerIcon" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+        <svg id="closeIcon" class="h-8 w-8 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 invisible transition-all duration-300 z-40" role="dialog"
+      aria-modal="true">
+      <div id="menu-overlay"
+        class="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+
+      <div id="menu-content"
+        class="absolute right-0 top-0 h-full w-72 py-8 pt-24 bg-[var(--bg-secondary)] shadow-2xl transform translate-x-full transition-transform ease-in-out duration-300">
+        <nav aria-label="Mobile Navigation">
+          <ul class="flex flex-col text-xl space-y-2">
+            <li class="w-full">
+              <a href="pathways.html" class="block w-full px-8 py-3 text-right hover:bg-white/5 transition">
+                The Pathways
+              </a>
+            </li>
+            <li class="w-full">
+              <input type="checkbox" id="tools-menu-toggle" class="peer hidden" />
+
+              <label for="tools-menu-toggle"
+                class="flex items-center justify-end gap-1 w-full px-8 py-3 text-right hover:bg-white/5 transition cursor-pointer select-none">
+                Tools
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </label>
+
+              <ul
+                class="flex flex-col max-h-0 bg-white/5 overflow-hidden transition-all duration-300 ease-in-out peer-checked:max-h-64">
+                <li>
+                  <a href="articles.html" class="block w-full px-8 py-3 text-right text-base hover:bg-white/10">
+                    Articles
+                  </a>
+                </li>
+                <li>
+                  <a href="guides.html" class="block w-full px-8 py-3 text-right text-base hover:bg-white/10">
+                    Free Guides
+                  </a>
+                </li>
+                <li>
+                  <a href="subscribe.html" class="block w-full px-8 py-3 text-right text-base hover:bg-white/10">
+                    Newsletter Signup
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="w-full">
+              <a href="about.html" class="block w-full px-8 py-3 text-right hover:bg-white/5 transition">About</a>
+            </li>
+            <li class="px-8 py-10">
+              <div class="w-full h-px bg-white/10"></div>
+            </li>
+            <li class="px-8 pb-5">
+              <a href="login.html"
+                class="block w-full px-6 py-3 bg-white text-black rounded-full font-bold text-center hover:bg-gray-200 transition">
+                Login
+              </a>
+            </li>
+            <li class="px-8">
+              <a href="register.html"
+                class="block w-full px-6 py-3 bg-white text-black rounded-full font-bold text-center hover:bg-gray-200 transition">
+                Join Upscale
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="w-full sm:mt-20 overflow-hidden">
+    <!-- Signup Form Section -->
+    <section class="flex flex-col-reverse lg:flex-row lg:gap-20 px-5 sm:px-8 lg:px-16 py-24 bg-[var(--bg-primary)]">
+      <!-- Signup Form -->
+      <div class="fade-in sm:ml-16 max-w-sm">
+        <h1 class="font-allura-regular text-5xl lg:text-6xl">For the Woman Who Leads.</h1>
+        <p class="mt-8 text-xl lg:text-2xl">
+          Stay inspired with fortnightly tools, stories, and strategies designed to elevate your leadership journey.
+        </p>
+        <form id="freeGuideForm" class="mt-10 space-y-2">
+          <div>
+            <input type="text" placeholder="First Name"
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--bg-secondary)] focus:outline-none transition">
+          </div>
+          <div>
+            <input type="email" placeholder="Email"
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--bg-secondary)] focus:outline-none transition">
+          </div>
+          <div class="pt-5 flex justify-center sm:justify-start">
+            <button type="submit" class="button">
+              Subscribe to Newsletter
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Image -->
+      <div
+        class="fade-in relative flex items-center justify-center w-full min-h-[400px] sm:min-h-[500px] overflow-hidden">
+        <img src="assets/subscribe/ellipse-yellow.svg" alt="Yellow ellipse" width="342" height="349"
+          class="absolute -left-20 sm:left-[8%] lg:left-0 top-0 scale-50 sm:scale-90 lg:scale-95 z-10">
+        <img src="assets/subscribe/ellipse-blue.svg" alt="Blue ellipse" width="447" height="456"
+          class="absolute -right-16 sm:right-[8%] lg:right-0 top-0 scale-[.60] sm:scale-90 lg:scale-95 z-20">
+        <img src="assets/subscribe/zenbook-duo-14.svg"
+          alt="Laptop screen displaying an article title and on the left, a smiling woman stands with arms crossed"
+          width="776" height="581" class="absolute top-12 sm:-top-16 lg:-top-7 sm:scale-90 lg:scale-110 z-30">
+      </div>
+    </section>
+
+    <!-- Founder Message Section -->
+    <section class="flex flex-col items-center justify-center px-5 sm:px-8 lg:px-16 py-20">
+      <p class="fade-in mb-10 max-w-5xl text-xl lg:text-2xl italic text-center">
+        “Upscale was created with one belief — that women who lead can change the world when they’re connected,
+        supported, and seen. Every story, strategy, and session we share is crafted to help you step further into your
+        power — not someday, but today.”
+      </p>
+      <img src="assets/subscribe/founder.svg" alt="Nusrat Chaudhry" width="70" height="70" class="fade-in">
+      <p class="fade-in pt-4 text-lg lg:text-xl italic text-center">Nusrat Chaudhry</p>
+      <p class="fade-in font-familjen-grotesk text-lg lg:text-xl italic text-center text-[#7E7373]">Founder</p>
+    </section>
+
+    <!-- WhatsApp Float -->
+    <div class="fixed bottom-5 right-5">
+      <a href="https://wa.me/971509394855?text=Hello%2C%20I%20need%20some%20assistance." target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block transition-transform duration-300 hover:scale-110 active:scale-95">
+        <img src="assets/icon-whatsapp.svg" alt="WhatsApp icon" width="40" height="40">
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[var(--bg-secondary)] text-white">
+    <div class="px-5 sm:px-8 lg:px-10 py-14">
+      <div class="flex flex-col md:flex-row justify-between gap-12">
+        <div class="flex flex-col justify-between">
+          <div class="w-32 mb-4">
+            <a href="index.html">
+              <img src="assets/logo-upscale.svg" alt="Upscale Connect logo" width="136" height="47">
+            </a>
+          </div>
+          <p class="hidden sm:flex font-familjen-grotesk text-sm text-white/50">&copy;All Rights Reserved 2026</p>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="grid grid-cols-2 sm:grid-cols-3 gap-8 w-full md:w-auto">
+          <ul class="space-y-4">
+            <li><a href="index.html" class="hover:text-gray-300 transition">Home</a></li>
+            <li><a href="pathways.html" class="hover:text-gray-300 transition">Pathways</a></li>
+            <li><a href="articles.html" class="hover:text-gray-300 transition">Articles</a></li>
+            <li><a href="guides.html" class="hover:text-gray-300 transition">Free Guides</a></li>
+            <li><a href="about.html" class="hover:text-gray-300 transition">About Us</a></li>
+          </ul>
+          <ul class="space-y-4">
+            <li><a href="subscribe.html" class="hover:text-gray-300 transition">Newsletter</a></li>
+            <li><a href="privacy-policy.html" class="hover:text-gray-300 transition">Privacy Policy</a></li>
+            <li><a href="terms-conditions.html" class="hover:text-gray-300 transition">Terms & Conditions</a></li>
+            <li>
+              <a href="https://wa.me/971509394855?text=Hello%2C%20I%20need%20some%20assistance." target="_blank"
+                rel="noopener noreferrer" class="hover:text-gray-300 transition">
+                Contact Support
+              </a>
+            </li>
+          </ul>
+          <ul class="sm:ml-8 space-y-4">
+            <li>
+              <a href="https://www.instagram.com/upscaleconnect/?igsh=MTduY29uemd6eXBuag%3D%3D" target="_blank"
+                rel="noopener noreferrer" class="hover:text-gray-300 transition">
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/profile.php?id=100091536547375&mibextid=ZbWKwL" target="_blank"
+                rel="noopener noreferrer" class="hover:text-gray-300 transition">
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-gray-300 transition" target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-gray-300 transition" target="_blank" rel="noopener noreferrer">
+                YouTube
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <p class="sm:hidden font-familjen-grotesk text-sm text-white/50">&copy;All Rights Reserved 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
