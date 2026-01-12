@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Reignite ambition, embrace entrepreneurship, and turn life’s pauses into powerful opportunities.">
+  <title>
+    Why More Women Are Thinking About Business Than Ever Before - Upscale Connect
+  </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="font-josefin-sans">
+  <!-- Header -->
+  <header class="absolute top-0 left-0 right-0 text-white z-50">
+    <!-- Main Navigation -->
+    <div class="px-5 py-5 flex justify-between items-center">
+      <a href="../index.html" class="z-40">
+        <img src="../assets/logo-upscale.svg" alt="Upscale Connect logo" width="136" height="47">
+      </a>
+
+      <nav class="hidden lg:block" aria-label="Main Navigation">
+        <ul class="flex items-center gap-12">
+          <li><a href="../pathways.html" class="hover:text-gray-300 transition">The Pathways</a></li>
+          <li class="relative group">
+            <span class="flex items-center gap-1 cursor-default hover:text-gray-300 transition">
+              Tools
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </span>
+            <ul
+              class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <li><a href="../articles.html" class="block px-4 py-2 hover:bg-black/20">Articles</a></li>
+              <li><a href="../guides.html" class="block px-4 py-2 hover:bg-black/20">Free Guides</a></li>
+              <li><a href="../subscribe.html" class="block px-4 py-2 hover:bg-black/20">Newsletter Signup</a></li>
+            </ul>
+          </li>
+          <li><a href="../about.html" class="hover:text-gray-300 transition">About</a></li>
+          <li class="flex gap-4 ml-4">
+            <a href="../login.html"
+              class="px-6 py-2 border border-white rounded-full hover:bg-white hover:text-black transition">
+              Login
+            </a>
+            <a href="../register.html" class="px-6 py-2 bg-white text-black rounded-full hover:bg-gray-100 transition">
+              Join Upscale
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="menuToggleBtn" class="lg:hidden p-2 focus:outline-none z-50" aria-expanded="false"
+        aria-controls="mobile-menu">
+        <svg id="hamburgerIcon" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+        <svg id="closeIcon" class="h-8 w-8 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 invisible transition-all duration-300 z-40" role="dialog"
+      aria-modal="true">
+      <div id="menu-overlay"
+        class="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+
+      <div id="menu-content"
+        class="absolute right-0 top-0 h-full w-72 py-8 pt-24 bg-[var(--bg-secondary)] shadow-2xl transform translate-x-full transition-transform ease-in-out duration-300">
+        <nav aria-label="Mobile Navigation">
+          <ul class="flex flex-col text-xl space-y-2">
+            <li class="w-full">
+              <a href="../pathways.html" class="block w-full px-8 py-3 text-right hover:bg-white/5 transition">
+                The Pathways
+              </a>
+            </li>
+            <li class="w-full">
+              <input type="checkbox" id="tools-menu-toggle" class="peer hidden" />
+
+              <label for="tools-menu-toggle"
+                class="flex items-center justify-end gap-1 w-full px-8 py-3 text-right hover:bg-white/5 transition cursor-pointer select-none">
+                Tools
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </label>
+
+              <ul
+                class="flex flex-col max-h-0 bg-white/5 overflow-hidden transition-all duration-300 ease-in-out peer-checked:max-h-64">
+                <li>
+                  <a href="../articles.html" class="block w-full px-8 py-3 text-right text-base hover:bg-white/10">
+                    Articles
+                  </a>
+                </li>
+                <li>
+                  <a href="../guides.html" class="block w-full px-8 py-3 text-right text-base hover:bg-white/10">
+                    Free Guides
+                  </a>
+                </li>
+                <li>
+                  <a href="../subscribe.html" class="block w-full px-8 py-3 text-right text-base hover:bg-white/10">
+                    Newsletter Signup
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="w-full">
+              <a href="../about.html" class="block w-full px-8 py-3 text-right hover:bg-white/5 transition">About</a>
+            </li>
+            <li class="px-8 py-10">
+              <div class="w-full h-px bg-white/10"></div>
+            </li>
+            <li class="px-8 pb-5">
+              <a href="../login.html"
+                class="block w-full px-6 py-3 bg-white text-black rounded-full font-bold text-center hover:bg-gray-200 transition">
+                Login
+              </a>
+            </li>
+            <li class="px-8">
+              <a href="../register.html"
+                class="block w-full px-6 py-3 bg-white text-black rounded-full font-bold text-center hover:bg-gray-200 transition">
+                Join Upscale
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="w-full overflow-hidden">
+    <!-- Hero Section -->
+    <section class="relative flex items-center justify-center h-[60vh] sm:h-[40vh] lg:min-h-screen overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0 bg-gray-500 text-center text-white text-2xl">
+        <img src="../assets/articles/article-05-hero.webp"
+          alt="Three women sit at an outdoor table, laughing and holding coffee cups" width="2000" height="1333"
+          class="w-full h-full object-cover" style="object-position: center top;">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
+      </div>
+
+      <!-- Hero Content -->
+      <div class="relative max-w-4xl px-5 sm:px-8 lg:px-16 my-10 lg:my-72 pt-10 text-white z-10">
+        <h1
+          class="animate-fade-in-up mb-6 font-playfair-display font-bold text-3xl md:text-4xl lg:text-5xl text-center">
+          Why More Women Are Thinking About Business Than Ever Before
+        </h1>
+      </div>
+    </section>
+
+    <!-- Article -->
+    <article class="px-5 sm:px-24 lg:px-72 pt-24 space-y-14 text-lg lg:text-xl">
+      <div>
+        <p class="mb-7"><i>Because women are no longer waiting for permission — we’re rewriting the rules.</i></p>
+        <p class="mb-7">
+          Over the last few years, something extraordinary has been happening quietly, steadily, and powerfully:
+        </p>
+        <p>More women than ever before are thinking about starting a business.</p>
+        <p>From young graduates to mothers returning to work…</p>
+        <p>from seasoned professionals to women seeking purpose…</p>
+        <p class="mb-7">from creatives to technical experts…</p>
+        <p>Women everywhere are asking themselves the same question:</p>
+        <p>“What if I started something of my own?”</p>
+        <p>And this shift isn’t random.</p>
+        <p>It’s not a trend.</p>
+        <p>It’s not a moment.</p>
+        <p>It’s a movement.</p>
+        <p>Let’s explore why.</p>
+      </div>
+
+      <div>
+        <p><b>Women are tired of being limited</b></p>
+        <p class="mb-7">For generations, women were given roles to fill, ceilings to accept, expectations to obey.</p>
+        <p>But today’s woman is asking:</p>
+        <ul class="mb-7 pl-10 list-disc">
+          <li><i>Why can’t I create my own income?</i></li>
+          <li><i>Why can’t I build something meaningful?</i></li>
+          <li><i>Why should my career depend on someone else’s approval?</i></li>
+        </ul>
+        <p>Women are no longer waiting to be chosen.</p>
+        <p>They are choosing themselves.</p>
+      </div>
+
+      <div>
+        <p><b>The desire for flexibility and freedom has become stronger</b></p>
+        <p>Modern life isn’t linear anymore.</p>
+        <p>Women want careers that allow them to:</p>
+        <ul class="mb-7 pl-10 list-disc">
+          <li>work from home</li>
+          <li>manage family responsibilities</li>
+          <li>travel</li>
+          <li>explore creativity</li>
+          <li>take mental health days</li>
+          <li>set their own pace</li>
+        </ul>
+        <p>And entrepreneurship offers exactly that:</p>
+        <p>freedom, flexibility, and ownership.</p>
+        <p>For many women, that freedom isn’t a luxury — it’s a necessity.</p>
+      </div>
+
+      <div>
+        <p><b>Women want purpose, not just paychecks</b></p>
+        <p class="mb-7">Women are deeply intuitive, emotionally intelligent, and impact-driven.</p>
+        <p>We don’t just want to earn.</p>
+        <p>We want to contribute.</p>
+        <p>We want to help.</p>
+        <p>We want to create.</p>
+        <p class="mb-7">We want to transform something.</p>
+        <p>
+          A business allows a woman to wake up every day knowing her work matters — not just to her bank account, but
+          to her identity.
+        </p>
+      </div>
+
+      <div>
+        <p><b>Financial independence has become non-negotiable</b></p>
+        <p class="mb-7">Earlier generations were taught to “save,” but today’s woman is learning to “build.”</p>
+        <p>Women now understand:</p>
+        <ul class="mb-7 pl-10 list-disc">
+          <li>financial independence = emotional independence</li>
+          <li>having your own income is power</li>
+          <li>multiple income streams are safety</li>
+          <li>entrepreneurship is a path to wealth, not just survival</li>
+        </ul>
+        <p>When a woman earns her own money, her entire life shifts.</p>
+      </div>
+
+      <div>
+        <p><b>Technology has opened doors that were once locked</b></p>
+        <p>With the rise of:</p>
+        <ul class="mb-7 pl-10 list-disc">
+          <li>social media</li>
+          <li>online businesses</li>
+          <li>digital marketing</li>
+          <li>freelancing platforms</li>
+          <li>e-commerce</li>
+          <li>remote work</li>
+        </ul>
+        <p>Women don’t need massive capital or physical offices to start.</p>
+        <p>All they need is:</p>
+        <ul class="mb-7 pl-10 list-disc">
+          <li>a phone</li>
+          <li>an internet connection</li>
+          <li>courage</li>
+          <li>clarity</li>
+          <li>and a skill</li>
+        </ul>
+        <p>The gateway to business has never been more accessible.</p>
+      </div>
+
+      <div>
+        <p><b>Community support for women entrepreneurs has grown</b></p>
+        <p>Women are finally seeing:</p>
+        <ul class="mb-7 pl-10 list-disc">
+          <li>women-led brands succeed</li>
+          <li>women-led startups get funding</li>
+          <li>women investors emerging</li>
+          <li>communities supporting female founders</li>
+          <li>role models who look like them</li>
+        </ul>
+        <p class="mb-7">Representation creates possibility.</p>
+        <p>When women see other women win, something inside them whispers,</p>
+        <p>“Maybe I can do this too.”</p>
+      </div>
+
+      <div>
+        <p><b>Women are tired of hustling for everyone except themselves</b></p>
+        <p>Women spend years supporting:</p>
+        <ul class="mb-7 pl-10 list-disc">
+          <li>families</li>
+          <li>partners</li>
+          <li>jobs</li>
+          <li>employers</li>
+          <li>colleagues</li>
+        </ul>
+        <p>But now a new question is rising:</p>
+        <p>“What if I gave that same dedication to myself?”</p>
+        <p>Starting a business becomes an act of reclaiming—</p>
+        <p>time, identity, ambition, and self-worth.</p>
+      </div>
+
+      <div>
+        <p><b>The world is finally acknowledging women’s strengths</b></p>
+        <p>Women are natural:</p>
+        <ul class="mb-7 pl-10 list-disc">
+          <li>leaders</li>
+          <li>communicators</li>
+          <li>problem solvers</li>
+          <li>nurturers</li>
+          <li>multitaskers</li>
+          <li>intuitive</li>
+          <li>strategists</li>
+        </ul>
+        <p>The business world is realising what women have always known—</p>
+        <p>we are built for entrepreneurship.</p>
+      </div>
+
+      <div>
+        <p><b>Women are redefining success on their own terms</b></p>
+        <p>Success also means</p>
+        <ul class="mb-7 pl-10 list-disc">
+          <li>having time with your kids</li>
+          <li>building a brand you love</li>
+          <li>earning without guilt</li>
+          <li>working with purpose</li>
+          <li>choosing peace over pressure</li>
+          <li>being proud of your life</li>
+        </ul>
+        <p class="mb-7">Entrepreneurship gives women the freedom to design success in a way that feels authentic.</p>
+        <p class="mb-7">Women stepping into business is not a coincidence.</p>
+        <p>And if you’re one of the women feeling the pull — the whisper inside you saying start something, please know
+          this:
+        </p>
+        <p>You’re not alone.</p>
+        <p>You’re not unreasonable.</p>
+        <p>You’re not dreaming too big.</p>
+        <p class="mb-7">You are part of a global awakening.</p>
+        <p>And your time is now.</p>
+      </div>
+    </article>
+
+    <!-- Related Articles -->
+    <section class="px-5 sm:px-8 lg:px-16 pt-40 pb-20">
+      <h2 class="fade-in font-playfair-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-center">
+        Related Articles
+      </h2>
+
+      <!-- Articles -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 mt-12">
+        <!-- Article 1 -->
+        <div class="fade-in flex flex-col h-full group overflow-hidden">
+          <img src="../assets/articles/article-01.webp" alt="Smiling woman with long hair in a gray blazer " width="334"
+            height="250"
+            class="block w-full h-auto transition-transform duration-500 ease-in-out group-hover:scale-110">
+          <p class="flex-grow py-5 font-medium text-xl">
+            How to Stay Motivated When Your Business Isn’t Giving You the Results You Hoped For.
+          </p>
+          <div>
+            <a href="../articles/how-to-stay-motivated-when-your-business-isnt-giving-you-the-results-you-hoped-for.html"
+              class="button">
+              Read More
+            </a>
+          </div>
+        </div>
+
+        <!-- Article 2 -->
+        <div class="fade-in flex flex-col h-full group overflow-hidden">
+          <img src="../assets/articles/article-02.webp" alt="Woman in a pink shirt sits at a desk " width="334"
+            height="250"
+            class="block w-full h-auto transition-transform duration-500 ease-in-out group-hover:scale-110">
+          <p class="flex-grow py-5 font-medium text-xl">
+            How Do I Deal with the Fact That I May Outgrow My Friends When I Step into Entrepreneurship?
+          </p>
+          <div>
+            <a href="../articles/how-do-i-deal-with-the-fact-that-i-may-outgrow-my-friends-when-i-step-into-entrepreneurship.html"
+              class="button">
+              Read More
+            </a>
+          </div>
+        </div>
+
+        <!-- Article 6 -->
+        <div class="fade-in flex flex-col h-full group overflow-hidden">
+          <img src="../assets/articles/article-06.webp" alt="Four women stand together, smiling and chatting"
+            width="334" height="250"
+            class="block w-full h-auto transition-transform duration-500 ease-in-out group-hover:scale-110">
+          <p class="flex-grow py-5 font-medium text-xl">
+            Why You are not ‘Late to the Game’
+          </p>
+          <div>
+            <a href="../articles/why-you-are-not-late-to-the-game.html" class="button">
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WhatsApp Float -->
+    <div class="fixed bottom-5 right-5">
+      <a href="https://wa.me/971509394855?text=Hello%2C%20I%20need%20some%20assistance." target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block transition-transform duration-300 hover:scale-110 active:scale-95">
+        <img src="../assets/icon-whatsapp.svg" alt="WhatsApp icon" width="40" height="40">
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[var(--bg-secondary)] text-white">
+    <div class="px-5 sm:px-8 lg:px-10 py-14">
+      <div class="flex flex-col md:flex-row justify-between gap-12">
+        <div class="flex flex-col justify-between">
+          <div class="w-32 mb-4">
+            <a href="../index.html">
+              <img src="../assets/logo-upscale.svg" alt="Upscale Connect logo" width="136" height="47">
+            </a>
+          </div>
+          <p class="hidden sm:flex font-familjen-grotesk text-sm text-white/50">&copy;All Rights Reserved 2026</p>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="grid grid-cols-2 sm:grid-cols-3 gap-8 w-full md:w-auto">
+          <ul class="space-y-4">
+            <li><a href="../index.html" class="hover:text-gray-300 transition">Home</a></li>
+            <li><a href="../pathways.html" class="hover:text-gray-300 transition">Pathways</a></li>
+            <li><a href="../articles.html" class="hover:text-gray-300 transition">Articles</a></li>
+            <li><a href="../guides.html" class="hover:text-gray-300 transition">Free Guides</a></li>
+            <li><a href="../about.html" class="hover:text-gray-300 transition">About Us</a></li>
+          </ul>
+          <ul class="space-y-4">
+            <li><a href="../subscribe.html" class="hover:text-gray-300 transition">Newsletter</a></li>
+            <li><a href="../privacy-policy.html" class="hover:text-gray-300 transition">Privacy Policy</a></li>
+            <li><a href="../terms-conditions.html" class="hover:text-gray-300 transition">Terms & Conditions</a></li>
+            <li>
+              <a href="https://wa.me/971509394855?text=Hello%2C%20I%20need%20some%20assistance." target="_blank"
+                rel="noopener noreferrer" class="hover:text-gray-300 transition">
+                Contact Support
+              </a>
+            </li>
+          </ul>
+          <ul class="sm:ml-8 space-y-4">
+            <li>
+              <a href="https://www.instagram.com/upscaleconnect/?igsh=MTduY29uemd6eXBuag%3D%3D" target="_blank"
+                rel="noopener noreferrer" class="hover:text-gray-300 transition">
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/profile.php?id=100091536547375&mibextid=ZbWKwL" target="_blank"
+                rel="noopener noreferrer" class="hover:text-gray-300 transition">
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-gray-300 transition" target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-gray-300 transition" target="_blank" rel="noopener noreferrer">
+                YouTube
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <p class="sm:hidden font-familjen-grotesk text-sm text-white/50">&copy;All Rights Reserved 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+
+</html>

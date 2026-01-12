@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Reignite ambition, embrace entrepreneurship, and turn life’s pauses into powerful opportunities.">
+  <title>How to Stay Motivated When Your Business Isn’t Giving You the Results You Hoped For - Upscale Connect</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="font-josefin-sans">
+  <!-- Header -->
+  <header class="absolute top-0 left-0 right-0 text-white z-50">
+    <!-- Main Navigation -->
+    <div class="px-5 py-5 flex justify-between items-center">
+      <a href="../index.html" class="z-40">
+        <img src="../assets/logo-upscale.svg" alt="Upscale Connect logo" width="136" height="47">
+      </a>
+
+      <nav class="hidden lg:block" aria-label="Main Navigation">
+        <ul class="flex items-center gap-12">
+          <li><a href="../pathways.html" class="hover:text-gray-300 transition">The Pathways</a></li>
+          <li class="relative group">
+            <span class="flex items-center gap-1 cursor-default hover:text-gray-300 transition">
+              Tools
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </span>
+            <ul
+              class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <li><a href="../articles.html" class="block px-4 py-2 hover:bg-black/20">Articles</a></li>
+              <li><a href="../guides.html" class="block px-4 py-2 hover:bg-black/20">Free Guides</a></li>
+              <li><a href="../subscribe.html" class="block px-4 py-2 hover:bg-black/20">Newsletter Signup</a></li>
+            </ul>
+          </li>
+          <li><a href="../about.html" class="hover:text-gray-300 transition">About</a></li>
+          <li class="flex gap-4 ml-4">
+            <a href="../login.html"
+              class="px-6 py-2 border border-white rounded-full hover:bg-white hover:text-black transition">
+              Login
+            </a>
+            <a href="../register.html" class="px-6 py-2 bg-white text-black rounded-full hover:bg-gray-100 transition">
+              Join Upscale
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="menuToggleBtn" class="lg:hidden p-2 focus:outline-none z-50" aria-expanded="false"
+        aria-controls="mobile-menu">
+        <svg id="hamburgerIcon" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+        <svg id="closeIcon" class="h-8 w-8 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 invisible transition-all duration-300 z-40" role="dialog"
+      aria-modal="true">
+      <div id="menu-overlay"
+        class="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+
+      <div id="menu-content"
+        class="absolute right-0 top-0 h-full w-72 py-8 pt-24 bg-[var(--bg-secondary)] shadow-2xl transform translate-x-full transition-transform ease-in-out duration-300">
+        <nav aria-label="Mobile Navigation">
+          <ul class="flex flex-col text-xl space-y-2">
+            <li class="w-full">
+              <a href="../pathways.html" class="block w-full px-8 py-3 text-right hover:bg-white/5 transition">
+                The Pathways
+              </a>
+            </li>
+            <li class="w-full">
+              <input type="checkbox" id="tools-menu-toggle" class="peer hidden" />
+
+              <label for="tools-menu-toggle"
+                class="flex items-center justify-end gap-1 w-full px-8 py-3 text-right hover:bg-white/5 transition cursor-pointer select-none">
+                Tools
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </label>
+
+              <ul
+                class="flex flex-col max-h-0 bg-white/5 overflow-hidden transition-all duration-300 ease-in-out peer-checked:max-h-64">
+                <li>
+                  <a href="../articles.html" class="block w-full px-8 py-3 text-right text-base hover:bg-white/10">
+                    Articles
+                  </a>
+                </li>
+                <li>
+                  <a href="../guides.html" class="block w-full px-8 py-3 text-right text-base hover:bg-white/10">
+                    Free Guides
+                  </a>
+                </li>
+                <li>
+                  <a href="../subscribe.html" class="block w-full px-8 py-3 text-right text-base hover:bg-white/10">
+                    Newsletter Signup
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="w-full">
+              <a href="../about.html" class="block w-full px-8 py-3 text-right hover:bg-white/5 transition">About</a>
+            </li>
+            <li class="px-8 py-10">
+              <div class="w-full h-px bg-white/10"></div>
+            </li>
+            <li class="px-8 pb-5">
+              <a href="../login.html"
+                class="block w-full px-6 py-3 bg-white text-black rounded-full font-bold text-center hover:bg-gray-200 transition">
+                Login
+              </a>
+            </li>
+            <li class="px-8">
+              <a href="../register.html"
+                class="block w-full px-6 py-3 bg-white text-black rounded-full font-bold text-center hover:bg-gray-200 transition">
+                Join Upscale
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="w-full overflow-hidden">
+    <!-- Hero Section -->
+    <section class="relative flex items-center justify-center h-[60vh] sm:h-[40vh] lg:min-h-screen overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0 bg-gray-500 text-center text-white text-2xl">
+        <img src="../assets/articles/article-01-hero.webp" alt="Woman in a gray blazer stands confidently" width="1440"
+          height="550" class="w-full h-full object-cover" style="object-position: center top;">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
+      </div>
+
+      <!-- Hero Content -->
+      <div class="relative max-w-4xl px-5 sm:px-8 lg:px-16 my-10 lg:my-72 pt-10 text-white z-10">
+        <h1
+          class="animate-fade-in-up mb-6 font-playfair-display font-bold text-3xl md:text-4xl lg:text-5xl text-center">
+          How to Stay Motivated When Your Business Isn’t Giving You the Results You Hoped For
+        </h1>
+      </div>
+    </section>
+
+    <!-- Article -->
+    <article class="px-5 sm:px-24 lg:px-72 pt-24 space-y-14 text-lg lg:text-xl">
+      <div>
+        <p>Every woman who starts a business carries a quiet dream in her heart.</p>
+        <p>A picture of what she hopes to build.</p>
+        <p class="mb-7">A vision of what life could look like once everything works out.</p>
+        <p>But here's the truth no one talks about enough: some seasons in business feel heavy.</p>
+        <p class="mb-7">
+          You show up. You work hard. You pour your soul into something… and still, the results don’t match your effort.
+        </p>
+        <p>I’ve been there more times than I can count.</p>
+        <p class="mb-7">
+          And these moments—when things are slow, confusing, or downright discouraging—are often the turning points
+          that shape who we become as founders.
+        </p>
+        <p class="mb-7">
+          This article is for every woman who feels tired, uncertain, or secretly wonders, “Is this even working?”
+        </p>
+        <p>I want you to know: you’re not failing. You’re evolving.</p>
+      </div>
+
+      <div>
+        <p><b>Accept that Slow Seasons Are Part of the Journey</b></p>
+        <p>Motivation becomes easier when we stop fighting the reality of growth.</p>
+        <p>Every business goes through phases:</p>
+        <ul class="mb-7 pl-10 list-disc">
+          <li>Expansion</li>
+          <li>Plateau</li>
+          <li>Reset</li>
+          <li>Realignment</li>
+        </ul>
+        <p>When we resist these phases, we burn out.</p>
+        <p>But when we understand that every dip has a purpose, we regain our power.</p>
+        <p>A slow season doesn’t mean you’re stuck.</p>
+        <p>It means your business is reorganizing itself for your next level.</p>
+      </div>
+
+      <div>
+        <p><b>Reconnect With Why You Started</b></p>
+        <p>When results dip, it’s easy to fixate on what’s not working.</p>
+        <p class="mb-7">But your original intention—the spark that made you start—still matters.</p>
+        <p>Ask yourself:</p>
+        <p><i>What was the moment I decided to start this business?</i></p>
+        <p><i>What problem did I want to solve?</i></p>
+        <p class="mb-7"><i>How did I want to feel while building this?</i></p>
+        <p>Your “why” is your home.</p>
+        <p>Whenever you lose your way, return to it.</p>
+      </div>
+
+      <div>
+        <p><b>Celebrate Invisible Progress</b></p>
+        <p>Some of the most important results are the ones you can’t see yet.</p>
+        <p>You are building:</p>
+        <ul class="mb-7 pl-10 list-disc">
+          <li>skills</li>
+          <li>resilience</li>
+          <li>clarity</li>
+          <li>discipline</li>
+          <li>courage</li>
+          <li>self-awareness</li>
+          <li>brand strength</li>
+        </ul>
+        <p>These don’t show up on spreadsheets.</p>
+        <p>But they show up in who you are becoming.</p>
+        <p>Invisible progress is STILL progress.</p>
+      </div>
+
+      <div>
+        <p><b>Shift Focus from Outcomes to Actions</b></p>
+        <p class="mb-7">The fastest way to lose motivation is to measure yourself only by results.</p>
+        <p>Instead, ask:</p>
+        <p><i>What are the three things I can control today?</i></p>
+        <p><i>What is one small action that moves me forward?</i></p>
+        <p><i>Where can I add value without overthinking?</i></p>
+        <p>This takes away the pressure of performance and brings back the joy of building.</p>
+      </div>
+
+      <div>
+        <p class="mb-7">Notice Where You’re Draining Your Energy</p>
+        <p class="mb-7">Often, it's not the lack of results that demotivates us…</p>
+        <p>It’s the unnecessary expectations we put on ourselves.</p>
+        <p>Energy leaks come from:</p>
+        <ul class="mb-7 pl-10 list-disc">
+          <li>trying to please everyone</li>
+          <li>comparing yourself with others</li>
+          <li>taking on clients who drain you</li>
+          <li>offering services, you don’t enjoy</li>
+          <li>trying to grow too fast</li>
+        </ul>
+        <p>When you seal these leaks, you free up energy to create results.</p>
+      </div>
+
+      <div>
+        <p><b>Surround Yourself with Honest, Personal Support</b></p>
+        <p>Motivation is not something you generate alone.</p>
+        <p class="mb-7">It’s something that grows inside the right environment.</p>
+        <p>Find people who:</p>
+        <ul class="mb-7 pl-10 list-disc">
+          <li>understand the rollercoaster</li>
+          <li>speak growth, not fear</li>
+          <li>remind you of your strengths</li>
+          <li>challenge you with love</li>
+          <li>celebrate your small wins</li>
+        </ul>
+        <p>Women do not thrive in isolation.</p>
+        <p>We rise in community.</p>
+      </div>
+
+      <div>
+        <p><b>Redefine What Success Looks Like for This Season</b></p>
+        <p>Maybe right now success isn’t more revenue.</p>
+        <p>Maybe success is:</p>
+        <ul class="mb-7 pl-10 list-disc">
+          <li>consistency</li>
+          <li>learning</li>
+          <li>healing</li>
+          <li>restructuring</li>
+          <li>experimenting</li>
+          <li>resting</li>
+        </ul>
+        <p>Your success does not always have to be loud.</p>
+        <p class="mb-7">Sometimes it’s quiet, steady, personal.</p>
+        <p>And that’s okay.</p>
+      </div>
+
+      <div>
+        <p><b>Have an Honest Conversation with Yourself</b></p>
+        <p class="mb-7">When motivation is low, ask:</p>
+        <p><i>Am I tired… or am I uninspired?</i></p>
+        <p><i>Do I need to push… or do I need to breathe?</i></p>
+        <p class="mb-7"><i>Is this resistance… or is this misalignment?</i></p>
+        <p>Your intuition knows.</p>
+        <p>Listen to it.</p>
+      </div>
+
+      <div>
+        <p><b>Remind Yourself: Results Follow Energy</b></p>
+        <p class="mb-7">The more you grow internally, the more your business grows externally.</p>
+        <p>When you:</p>
+        <ul class="mb-7 pl-10 list-disc">
+          <li>strengthen your mindset</li>
+          <li>renew your commitment</li>
+          <li>align your offers</li>
+          <li>clarify your message</li>
+          <li>serve with heart</li>
+        </ul>
+        <p class="mb-7">The results eventually catch up.</p>
+        <p>The external outcome is always the last thing to shift.</p>
+        <p>But it does shift.</p>
+      </div>
+
+      <div>
+        <p><b>Don’t Quit on a Season That’s Trying to Teach You Something</b></p>
+        <p>The most powerful businesses are not built in momentum.</p>
+        <p class="mb-7">They’re built in the moments when you choose to continue… even when nothing seems to be moving.
+        </p>
+        <p class="mb-7">This is where your identity as a founder crystallizes.</p>
+        <p class="mb-7">If you’re in a low phase right now, I want to say this from my heart:</p>
+        <p>You are not behind.</p>
+        <p>You are not failing.</p>
+        <p class="mb-7">You are not alone.</p>
+        <p class="mb-7">You are in the middle of a chapter that will one day make perfect sense.</p>
+        <p>Keep showing up.</p>
+        <p>Keep refining.</p>
+        <p class="mb-7">Keep believing in the version of you who started this journey.</p>
+        <p>Your breakthrough will meet you halfway.</p>
+      </div>
+    </article>
+
+    <!-- Related Articles -->
+    <section class="px-5 sm:px-8 lg:px-16 pt-40 pb-20">
+      <h2 class="fade-in font-playfair-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-center">
+        Related Articles
+      </h2>
+
+      <!-- Articles -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 mt-12">
+        <!-- Article 2 -->
+        <div class="fade-in flex flex-col h-full group overflow-hidden">
+          <img src="../assets/articles/article-02.webp" alt="Woman in a pink shirt sits at a desk " width="334"
+            height="250"
+            class="block w-full h-auto transition-transform duration-500 ease-in-out group-hover:scale-110">
+          <p class="flex-grow py-5 font-medium text-xl">
+            How Do I Deal with the Fact That I May Outgrow My Friends When I Step into Entrepreneurship?
+          </p>
+          <div>
+            <a href="../articles/how-do-i-deal-with-the-fact-that-i-may-outgrow-my-friends-when-i-step-into-entrepreneurship.html"
+              class="button">
+              Read More
+            </a>
+          </div>
+        </div>
+
+        <!-- Article 3 -->
+        <div class="fade-in flex flex-col h-full group overflow-hidden">
+          <img src="../assets/articles/article-03.webp"
+            alt="Woman in a navy blazer sits at an outdoor table with a laptop" width="334" height="250"
+            class="block w-full h-auto transition-transform duration-500 ease-in-out group-hover:scale-110">
+          <p class="flex-grow py-5 font-medium text-xl">
+            How to Get Over the Confusion of Starting a Job or a Business.
+          </p>
+          <div>
+            <a href="../articles/how-to-get-over-the-confusion-of-starting-a-job-or-a-business.html" class="button">
+              Read More
+            </a>
+          </div>
+        </div>
+
+        <!-- Article 4 -->
+        <div class="fade-in flex flex-col h-full group overflow-hidden">
+          <img src="../assets/articles/article-04.webp"
+            alt="Woman with curly hair and a light-colored shirt stands confidently" width="334" height="250"
+            class="block w-full h-auto transition-transform duration-500 ease-in-out group-hover:scale-110">
+          <p class="flex-grow py-5 font-medium text-xl">
+            Why Your Business Growth Depends on Your Personal Growth
+          </p>
+          <div>
+            <a href="../articles/why-your-business-growth-depends-on-your-personal-growth.html" class="button">
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WhatsApp Float -->
+    <div class="fixed bottom-5 right-5">
+      <a href="https://wa.me/971509394855?text=Hello%2C%20I%20need%20some%20assistance." target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block transition-transform duration-300 hover:scale-110 active:scale-95">
+        <img src="../assets/icon-whatsapp.svg" alt="WhatsApp icon" width="40" height="40">
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[var(--bg-secondary)] text-white">
+    <div class="px-5 sm:px-8 lg:px-10 py-14">
+      <div class="flex flex-col md:flex-row justify-between gap-12">
+        <div class="flex flex-col justify-between">
+          <div class="w-32 mb-4">
+            <a href="../index.html">
+              <img src="../assets/logo-upscale.svg" alt="Upscale Connect logo" width="136" height="47">
+            </a>
+          </div>
+          <p class="hidden sm:flex font-familjen-grotesk text-sm text-white/50">&copy;All Rights Reserved 2026</p>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="grid grid-cols-2 sm:grid-cols-3 gap-8 w-full md:w-auto">
+          <ul class="space-y-4">
+            <li><a href="../index.html" class="hover:text-gray-300 transition">Home</a></li>
+            <li><a href="../pathways.html" class="hover:text-gray-300 transition">Pathways</a></li>
+            <li><a href="../articles.html" class="hover:text-gray-300 transition">Articles</a></li>
+            <li><a href="../guides.html" class="hover:text-gray-300 transition">Free Guides</a></li>
+            <li><a href="../about.html" class="hover:text-gray-300 transition">About Us</a></li>
+          </ul>
+          <ul class="space-y-4">
+            <li><a href="../subscribe.html" class="hover:text-gray-300 transition">Newsletter</a></li>
+            <li><a href="../privacy-policy.html" class="hover:text-gray-300 transition">Privacy Policy</a></li>
+            <li><a href="../terms-conditions.html" class="hover:text-gray-300 transition">Terms & Conditions</a></li>
+            <li>
+              <a href="https://wa.me/971509394855?text=Hello%2C%20I%20need%20some%20assistance." target="_blank"
+                rel="noopener noreferrer" class="hover:text-gray-300 transition">
+                Contact Support
+              </a>
+            </li>
+          </ul>
+          <ul class="sm:ml-8 space-y-4">
+            <li>
+              <a href="https://www.instagram.com/upscaleconnect/?igsh=MTduY29uemd6eXBuag%3D%3D" target="_blank"
+                rel="noopener noreferrer" class="hover:text-gray-300 transition">
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/profile.php?id=100091536547375&mibextid=ZbWKwL" target="_blank"
+                rel="noopener noreferrer" class="hover:text-gray-300 transition">
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-gray-300 transition" target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-gray-300 transition" target="_blank" rel="noopener noreferrer">
+                YouTube
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <p class="sm:hidden font-familjen-grotesk text-sm text-white/50">&copy;All Rights Reserved 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+
+</html>
