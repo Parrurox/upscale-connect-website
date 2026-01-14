@@ -150,17 +150,19 @@
         <p class="mt-8 text-xl lg:text-2xl">
           Stay inspired with fortnightly tools, stories, and strategies designed to elevate your leadership journey.
         </p>
-        <form id="freeGuideForm" class="mt-10 space-y-2">
+        <form action="#" method="post" id="subscribeForm" class="mt-10 space-y-2">
           <div>
-            <input type="text" placeholder="First Name"
+            <input type="text" id="firstName" name="firstName" placeholder="First Name" required aria-label="First Name"
+              maxlength="100"
               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--bg-secondary)] focus:outline-none transition">
           </div>
           <div>
-            <input type="email" placeholder="Email"
+            <input type="email" id="email" name="email" placeholder="Email" required aria-label="Email Address"
+              maxlength="100"
               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--bg-secondary)] focus:outline-none transition">
           </div>
           <div class="pt-5 flex justify-center sm:justify-start">
-            <button type="submit" class="button">
+            <button type="submit" name="submit" class="button">
               Subscribe to Newsletter
             </button>
           </div>
