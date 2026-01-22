@@ -149,6 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setupModal('partnerModal', 'openPartnerModalBtn', 'closePartnerModalBtn', 'partnerScrollContainer');
   setupModal('freeGuideModal', 'openFreeGuideModalBtn1', 'closeFreeGuideModalBtn', 'freeGuideScrollContainer');
   setupModal('freeGuideModal', 'openFreeGuideModalBtn2', 'closeFreeGuideModalBtn', 'freeGuideScrollContainer');
+  setupModal('contactModal', 'openContactModalBtn', 'closeContactModalBtn', 'contactScrollContainer');
 
   // Experts Carousel
   const expertsCarousel = document.getElementById('expertsCarousel');
